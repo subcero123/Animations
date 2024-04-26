@@ -1,4 +1,4 @@
-Mis disculpas por la omisión. Aquí tienes el README con los enlaces de los GIFs:
+
 
 ### Animation Repository
 
