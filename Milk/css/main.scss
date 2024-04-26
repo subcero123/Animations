@@ -1,0 +1,82 @@
+body{
+  background-color: white;
+}
+
+.milk-opening{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  .milk-container{
+    position: absolute;
+    bottom: 1%;
+    height: 350px;
+    overflow: hidden;
+    font-size: 25rem;
+    line-height: 0px;
+    font-weight: 900;
+    
+    p{
+      margin: 200px 0 0 0;
+    }
+    
+  }
+}
+
+.title{
+  position: absolute;
+  top: 1%;
+  margin-top: 50px;
+  font-size: 9rem;
+  margin-left: 15px;
+  line-height: 0px;
+  .typing{
+    position: inherit;
+    top: 110px;
+    width: 1000px;
+
+    .underscore{
+      margin-bottom: 15px;
+    }
+
+    .texto_typing{
+      
+      margin-left: 70px;
+    }
+  }
+}
+
+.video{
+  position: absolute;
+  width: 35%;
+  height: 40%;
+  top: calc(50% - 20%);
+  left: calc(50% - 17.5%);
+  border-radius: 25px;
+  overflow: hidden;
+  z-index: 2;
+
+  video{
+    
+  }
+}
+
+.vertical-line{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border-right: 0.5px solid black;
+  top: 0;
+  z-index: 1;
+}
+
+.w-logo{
+  position: absolute;
+  top: 50%;
+  right: -1.4%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  font-size: 10rem;
+  font-weight: 900;
+  color: white;
+}

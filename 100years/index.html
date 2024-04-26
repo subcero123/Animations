@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split Type</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <section>
+      <div class="contenido-principal">
+        <div class="central entrada">
+          <div class="one one--hundred">
+            <div class="mask">
+              <img class="image image--entrada" src="clouds_complete.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="central entrada">
+          <div class="one one--hundred one--hundred--lady">
+            <div class="mask">
+              <img class="image--lady" src="lady.png" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Uno mascara -->
+        <div class="central uno-izquierda elemento-libre">
+          <div class="one">
+            <div class="mask">
+              <img class="image image--uno" src="clouds_complete.jpg" />
+            </div>
+          </div>
+          <div class="texto">
+            <div class="take">
+              <p>TAKE</p>
+            </div>
+            <div class="take-two">
+              <p>THE QUIZ</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="central uno-izquierda elemento-libre">
+          <div class="one one--lady">
+            <div class="mask">
+              <img
+                class="image image--uno image--uno--lady"
+                src="take-the-quiz.png"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Circulo mascara con imagen original-->
+        <div class="central elemento-libre cero-mascara-bg">
+          <div class="one one--zero one--zero--middle">
+            <div class="mask">
+              <img class="image image--middle" src="clouds_complete.jpg" />
+              <img
+                class="image image--middle image--middle--after"
+                src="our-history.png"
+              />
+            </div>
+          </div>
+          <div class="texto">
+            <div class="take">
+              <p>OUR</p>
+            </div>
+            <div class="take-two">
+              <p>HISTORY</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Circulo mascara con imagen con lady -->
+        <div class="central elemento-libre cero-mascara-bg cero-lady">
+          <div class="one one--zero one--zero--middle">
+            <div class="mask">
+              <img class="image image--middle--lady" src="lady.png" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Segunda mascara con fondo -->
+        <div class="central elemento-libre cero-mascara-fondo">
+          <div class="one one--zero one--zero--right">
+            <div class="mask">
+              <img class="image image--background" src="fondo_carne.png" />
+            </div>
+          </div>
+        </div>
+
+        <div class="central cero-derecha elemento-libre">
+          <div class="one one--zero one--zero--right--back">
+            <div class="mask">
+              <img class="image image--last" src="clouds_complete.jpg" />
+              <img
+                class="image image--last image--last--after"
+                src="celebrate-with-us.png"
+              />
+            </div>
+          </div>
+          <div class="texto">
+            <div class="take">
+              <p>CELEBRATE</p>
+            </div>
+            <div class="take-two">
+              <p>WITH US</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="central cero-derecha elemento-libre cero-lady">
+          <div class="one one--zero one--zero--right--back">
+            <div class="mask">
+              <img class="image image--last image--last--lady" src="lady.png" />
+            </div>
+          </div>
+        </div>
+
+        <div class="title">
+          <img src="wordmark.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script>
+      // smooth scroll
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap.timeline({
+        defaults: { ease: "power1.out", duration: 1 },
+      });
+
+      //Empieza cubriendo toda la pantalla
+      tl.to(".contenido-principal", {
+        duration: 7,
+        opacity: 1,
+      })
+        .to(
+          ".central",
+          {
+            duration: 7,
+            scale: 0.12,
+          },
+          "<"
+        )
+        .to(
+          ".image--lady",
+          {
+            duration: 7,
+            y: 50,
+          },
+          "<"
+        )
+        .to(
+          ".image--entrada",
+          {
+            duration: 7,
+            y: -100,
+          },
+          "<"
+        )
+        .from(
+          ".title",
+          {
+            duration: 2,
+            opacity: 0,
+            scale: 3,
+          },
+          "-=1.5"
+        )
+        .to(
+          ".title",
+          {
+            duration: 2,
+            y: 50,
+            opacity: 0,
+          },
+          "+=.5"
+        )
+        .to(
+          [".elemento-libre", ".one--zero"],
+          {
+            opacity: 1,
+            duration: 0.005,
+          },
+          "<"
+        )
+        .to(
+          [".entrada"],
+          {
+            opacity: 0,
+            duration: 0.005,
+          },
+          "<"
+        )
+        .to(
+          [".uno-izquierda"],
+          {
+            xPercent: -25,
+            yPercent: 5,
+            duration: 2,
+          },
+          "<"
+        )
+        .to(
+          [".cero-mascara-bg", ".cero-mascara-fondo"],
+          {
+            xPercent: -5,
+            yPercent: -20,
+            duration: 2,
+          },
+          "<"
+        )
+        .to(
+          [".cero-lady", ".cero-mascara-fondo"],
+          {
+            opacity: 0,
+            duration: 0.2,
+            onComplete: function () {
+              // Una vez que la animación de desvanecimiento esté completa, cambiamos el contenido de la imagen
+              document.querySelector(".image--middle").src = "fondo_azul.png";
+              document.querySelector(".image--last").src = "fondo_amarillo.png";
+            },
+          },
+          "<"
+        )
+        .to(
+          [".image--middle--after", ".image--last--after"],
+          {
+            opacity: 1,
+            duration: 1,
+          },
+          "<"
+        )
+        .from(
+          [".image--uno--lady"],
+          {
+            scale: 1,
+            x: -5,
+          },
+          "<"
+        )
+        .to(
+          [".cero-derecha"],
+          {
+            xPercent: 18,
+            yPercent: 20,
+            duration: 2,
+          },
+          "<"
+        )
+        .fromTo('.texto',{
+          y: 50,
+          duration: 1
+        },{
+          y: 0,
+          opacity: 1,
+          duration: 1
+        })
+
+      const lenis = new Lenis();
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+@charset "UTF-8";
+section {
+  width: 100%;
+  height: 100vh;
+}
+section .container-entrada {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fedcea;
+  position: absolute;
+  z-index: 5;
+}
+section .container-entrada .central {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .container-entrada .central svg {
+  position: absolute;
+  height: 60px;
+  z-index: 2;
+}
+section .container-above-default {
+  width: 100%;
+  height: 100%;
+}
+section .container-above-default .navbar {
+  width: 98%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+}
+section .container-above-default .navbar svg {
+  height: 40px;
+  z-index: 2;
+}
+section .container-above-default .navbar .menu {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  width: 450px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+section .container-above-default .navbar .menu a:link,
+section .container-above-default .navbar .menu a:visited {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+section .container-above-default .navbar .botones {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+section .container-above-default .navbar .botones .idioma {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .container-above-default .navbar .botones .idioma svg {
+  width: 15px;
+}
+section .container-above-default .navbar .botones .btn {
+  padding: 5px 10px;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  padding: 10px;
+}
+section .container-above-default .navbar .botones .boton-try {
+  background-color: #fd1774;
+}
+section .container-above-default .navbar .botones .sign-in {
+  background-color: black;
+}
+section .container-above-default .navbar .botones a:link,
+section .container-above-default .navbar .botones a:visited {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+section .container-above-default .contenedor-video {
+  width: 98%;
+  height: 90%;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .container-above-default .contenedor-video .floating-card {
+  position: absolute;
+  padding: 5px 10px;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px); /* Ajusta el valor del desenfoque según desees */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+section .container-above-default .contenedor-video .floating-card--1 {
+  bottom: 18%;
+  left: 15%;
+}
+section .container-above-default .contenedor-video .floating-card--2 {
+  bottom: 30%;
+  left: 25%;
+}
+section .container-above-default .contenedor-video .floating-card--3 {
+  bottom: 19%;
+  left: 50%;
+}
+section .container-above-default .contenedor-video .floating-card--4 {
+  bottom: 25%;
+  right: 15%;
+}
+section .container-above-default .contenedor-video .floating-card .icon {
+  border-radius: 5px;
+  background-color: #FFF5D9;
+  margin-right: 5px;
+}
+section .container-above-default .contenedor-video .floating-card .icon img {
+  padding: 5px;
+  width: 20px;
+}
+section .container-above-default .contenedor-video .shadow {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px -100px 100px rgba(0, 0, 0, 0.75);
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+section .container-above-default .contenedor-video .texto {
+  position: absolute;
+  font-size: 7.5rem;
+  color: white;
+  line-height: 0px;
+  text-align: center;
+  bottom: 10%;
+  z-index: 2;
+}
+section .container-above-default .contenedor-video .botones {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  z-index: 2;
+}
+section .container-above-default .contenedor-video .botones .btn {
+  padding: 5px 10px;
+  border-radius: 25px;
+  color: white;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  padding: 15px 20px;
+  font-weight: normal;
+}
+section .container-above-default .contenedor-video .botones .watch {
+  background-color: #fd1774;
+}
+section .container-above-default .contenedor-video .botones .talk {
+  background-color: white;
+  color: black;
+}/*# sourceMappingURL=main.css.map */

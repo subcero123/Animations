@@ -1,0 +1,227 @@
+@font-face {
+  font-family: 'ColateraSoft'; /* Nombre de la fuente */
+  src: url('fonts/ColateraSoft.ttf') format('truetype'); /* Ruta al archivo de la fuente */
+}
+
+
+
+body {
+  background-color: #f4eddc;
+  font-family: 'ColateraSoft', sans-serif;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  .contenido-principal {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    opacity: 0.2;
+  }
+
+  .central {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 1;
+    z-index: 2;
+    .one {
+      opacity: 1;
+      width: 100%;
+      scale: 1.82;
+      z-index: 2;
+      mask-image: url(../One.71d8aa39.svg);
+      -webkit-mask-position: center;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      position: relative;
+
+      &--lady{
+        transform: translate(0px, -250px);
+        scale: 1.2;
+      }
+
+      &--zero {
+        scale: 1.79;
+        transform: translateX(0px);
+        mask-image: url(../Zero.0fdf939f.svg);
+
+        &--middle {
+          transform: translateX(-160px);
+        }
+        &--right {
+          scale: 1.63;
+          transform: translate(-170px, -80px);
+
+          &--back {
+            transform: translateX(160px);
+          }
+        }
+
+        .mask {
+          width: 150%;
+          height: 100%;
+        }
+      }
+
+      &--hundred {
+        scale: 2.5;
+        mask-image: url(../Hundred.b3353aed.svg);
+        &--lady {
+          opacity: 1;
+        }
+      }
+      .mask {
+        width: 120%;
+        height: 100%;
+        overflow: hidden;
+        .image {
+          width: 120%;
+          height: 100%;
+          transform: translateY(90px);
+          transform: translateX(-250px);
+
+          &--uno {
+            transform: translate(-350px, -250px);
+            width: 120%;
+            height: 100%;
+
+            &--lady{
+              transform: translate(-150px, -550px);
+
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          &--middle {
+            width: 120%;
+            scale: 1.4;
+            transform: translate(-115px, -100px);
+
+            &--after {
+              position: absolute;
+              opacity: 0;
+              width: 100%;
+              height: 100%;
+              scale: 1;
+              top: 10%;
+              left: 5%;
+            }
+
+            &--lady {
+              scale: 1.5;
+              transform: translate(-25px, 45px);
+            }
+          }
+
+          &--last {
+            width: 120%;
+            scale: 1.4;
+            transform: translate(-645px, -100px);
+
+            &--after {
+              position: absolute;
+              opacity: 0;
+              width: 90%;
+              height: 90%;
+              scale: 1;
+              top: 18%;
+              left: 35%;
+            }
+
+            &--lady {
+              scale: 1.5;
+              transform: translate(-535px, 30px);
+            }
+          }
+
+          &--lady {
+            width: 120%;
+            height: 100%;
+            transform: translate(-250px, 300px);
+          }
+        }
+      }
+    }
+
+    .texto{
+      width: 10000px;
+      opacity: 0;
+      font-size: 40rem;
+      font-weight: bold;
+      line-height: 1px;
+      
+      position: relative;
+      top: -190%;
+      left: 90%;
+      letter-spacing: -4rem;
+    }
+  }
+
+  .cero-derecha {
+    transform: translateX(70px);
+    z-index: -1;
+
+    .image {
+      width: 120%;
+      height: 100%;
+    }
+  }
+
+  .cero-mascara-bg {
+    z-index: 1;
+
+    .texto{
+      top: -180%;
+      left: 110%;
+
+    }
+  }
+
+  .cero-mascara-fondo {
+    z-index: 0;
+    .image {
+      width: 120%;
+      height: 100%;
+    }
+  }
+
+  .uno-izquierda {
+    z-index: 2;
+    transform: translate(-165px, 5px);
+  }
+
+  .elemento-libre {
+    opacity: 0;
+  }
+
+  .cero-derecha{
+    .texto{
+      top: -180%;
+      left: -185%;
+    }
+  }
+
+  .title {
+    position: absolute;
+    width: 450px;
+    height: 200px;
+    top: 70%;
+    left: 50%;
+    opacity: 1;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #849ba1;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
