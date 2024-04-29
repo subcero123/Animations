@@ -125,9 +125,9 @@
             <p class="texto-1">Tailored employee</p>
             <p class="texto-2">benefits & recognition</p>
           </div>
-          <div class="botones">
-            <div class="btn watch">Watch a demo</div>
-            <div class="btn talk">Talk to a human</div>
+          <div class="botones botones-animate">
+            <div class="btn watch btn-animate">Watch a demo</div>
+            <div class="btn talk btn-animate">Talk to a human</div>
           </div>
           <div class="floating-card floating-card--1">
             <div class="icon">
@@ -231,9 +231,9 @@
         .from(".tedy", { y: 50, duration: 0.6 })
         .to(".container-entrada", { yPercent: 100 })
         .to(".container-entrada", { display: "none" }, "-=0.5")
-        .from([".texto-1", ".texto-2", ".botones"], { y: 350, stagger: 0.5 })
+        .from([".texto-1", ".texto-2", ".botones-animate"], { y: 400, stagger: 0.2, }, "+=0.5")
         .to(".shadow", { opacity: 1 }, "<")
-        .from(cards, {y: 350, stagger: .2})
+        .from(cards, {scale: .2, display: "none", stagger: .1, ease: ""})
 
       const lenis = new Lenis();
 
