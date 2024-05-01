@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Salih Kizilkaya"; /* Nombre de la fuente */
+  src: url("../fonts/Salih Kizilkaya - SK Zweig Rounded Light Italic.ttf") format("truetype"); /* Ruta al archivo de la fuente */
+}
+@font-face {
+  font-family: "Botanika Mono"; /* Nombre de la fuente */
+  src: url("../fonts/Botanika Mono Regular.otf") format("truetype"); /* Ruta al archivo de la fuente */
+}
+body {
+  background-color: black;
+}
+
+.contenedor-general {
+  width: 100%;
+  display: flex;
+}
+.contenedor-general .navbar {
+  width: 8%;
+  height: 100%;
+  font-size: 1.2rem;
+  position: sticky;
+  display: flex;
+  font-family: "Botanika Mono";
+  top: 0;
+  color: #646363;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 5px;
+  line-height: 20px;
+}
+.contenedor-general .navbar a {
+  text-decoration: none;
+  color: #646363;
+}
+.contenedor-general .navbar .titulo {
+  height: 33%;
+  display: flex;
+  text-align: end;
+  color: #8b8b8b;
+  margin-bottom: 3%;
+}
+.contenedor-general .navbar .titulo a {
+  margin-right: 13%;
+}
+.contenedor-general .navbar .titulo a svg {
+  transform: rotate(90deg);
+}
+.contenedor-general .navbar .titulo-centro {
+  height: 20%;
+  margin-bottom: 15%;
+}
+.contenedor-general .navbar .titulo-final {
+  margin-bottom: 5%;
+  margin-top: 5%;
+  margin-right: 1.5%;
+  height: 45%;
+  display: flex;
+}
+.contenedor-general .contenedor-escenas {
+  width: 90%;
+}
+.contenedor-general .contenedor-escenas .elemento-parallax {
+  width: 100%;
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background-1 {
+  background-image: url("../1.jpg");
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background-2 {
+  background-image: url("../2.jpg");
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background-3 {
+  background-image: url("../3.jpg");
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background-4 {
+  background-image: url("../4.jpg");
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background-5 {
+  background-image: url("../5.jpg");
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background-6 {
+  background-image: url("../6.jpg");
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background-7 {
+  background-image: url("../7.jpg");
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background-8 {
+  background-image: url("../8.jpg");
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background-9 {
+  background-image: url("../9.jpg");
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background .texto {
+  color: white;
+  font-size: 8rem;
+  line-height: 0px;
+  font-family: "Salih Kizilkaya";
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background .texto .texto-pequeno {
+  font-family: "Botanika Mono";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-top: -50px;
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .background .texto .texto-pequeno p {
+  line-height: 0px;
+  margin-bottom: 0px;
+}
+
+.bold {
+  font-weight: 600;
+}/*# sourceMappingURL=main.css.map */
