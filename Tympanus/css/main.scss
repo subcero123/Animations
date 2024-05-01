@@ -23,7 +23,7 @@ body {
 
   .navbar{
     width: 8%;
-    height: 100%;
+    height: 97%;
     font-size: 1.2rem;
     position: sticky;
     display: flex;
@@ -45,7 +45,7 @@ body {
     }
 
     .titulo{
-      height: 33%;
+      height: 39%;
       display: flex;
       text-align: end;
       color: $color-texto-secundario-activado;
@@ -64,21 +64,15 @@ body {
       
       &-centro{
         height: 20%;
-        margin-bottom: 15%;
+        margin-bottom: 7%;
+        margin-top: 5%;
       }
 
       &-final{
-        margin-bottom: 5%;
         margin-top: 5%;
         margin-right: 1.5%;
         height: 45%;
         display: flex;
-
-        
-
-        a{
-          
-        }
       }
     }
   }
@@ -92,17 +86,18 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      
       .background{
         width: 100%;
         height: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-size: cover;
-      
-        
-  
-  
+        // Hacer zoom en la imagen
+        background-size: 150% 150%;
+        &:hover{
+          cursor: pointer;
+        }
         &-1{
           background-image: url('../1.jpg');
         }
@@ -135,7 +130,16 @@ body {
           color: white;
           font-size: 8rem;
           line-height: 0px;
+          width: 100%;
+          text-align: center;
+          
           font-family: 'Salih Kizilkaya';
+          
+          .texto-grande{
+            overflow: hidden;
+            width: 100%;
+          }
+
   
           .texto-pequeno{
             font-family: 'Botanika Mono';

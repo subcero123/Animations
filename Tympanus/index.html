@@ -18,7 +18,8 @@
       <div class="navbar">
         <div class="titulo-final">
           <a href=""
-            >THE EASIEST WAY TO ANIMATE LOTTIE IS LIVE: COMPLETELY FREE UNLIMITED EXPORTS WITH SVGATOR.</a
+            >THE EASIEST WAY TO ANIMATE LOTTIE IS LIVE: COMPLETELY FREE
+            UNLIMITED EXPORTS WITH SVGATOR.</a
           >
         </div>
         <div class="titulo-centro">
@@ -32,7 +33,12 @@
             href="https://tympanus.net/codrops/2022/08/03/large-image-to-content-page-transition/"
           >
             <span class="oh__inner"></span>
-            <svg width="18px" fill="currentColor" height="18px" viewBox="0 0 24 24">
+            <svg
+              width="18px"
+              fill="currentColor"
+              height="18px"
+              viewBox="0 0 24 24"
+            >
               <path
                 vector-effect="non-scaling-stroke"
                 d="M18.25 15.5a.75.75 0 00.75-.75v-9a.75.75 0 00-.75-.75h-9a.75.75 0 000 1.5h7.19L6.22 16.72a.75.75 0 101.06 1.06L17.5 7.56v7.19c0 .414.336.75.75.75z"
@@ -154,8 +160,79 @@
 
       gsap.registerPlugin(ScrollTrigger);
 
-      const tl = gsap.timeline({
+      let tl = gsap.timeline({
         defaults: { ease: "power1.out", duration: 1 },
+      });
+
+      // Poner a todos mis elemento-parallax el listeenr de on click
+      const elementos = document.querySelectorAll(".elemento-parallax");
+      elementos.forEach((elemento) => {
+        elemento.addEventListener("click", () => {
+          // Obtener el index del elemento
+          const index = Array.from(elementos).indexOf(elemento);
+          // Mover el scroll a la posicion del index
+          window.scrollTo({
+            top: (window.innerHeight - 100) * index,
+            behavior: "smooth",
+          });
+
+          // Obtener su textogrande y pequeño
+          const textoGrande = elemento.querySelector(".texto-grande");
+          const textoPequeno = elemento.querySelector(".texto-pequeno");
+          const background = elemento.querySelector(".background");
+
+          // Obtener los demás elementos hermanos
+          const hermanos = Array.from(elemento.parentElement.children);
+          
+
+          // Animar el texto con efecto de salida ventana
+          tl = gsap.timeline({
+            defaults: { duration: 1, ease: "power2.inOut"
+ },
+          });
+
+          tl.to(textoGrande, {
+            y: 50,
+            opacity: 0,
+          })
+            .to(
+              textoPequeno,
+              {
+                y: 50,
+                opacity: 0,
+
+              },
+              "<"
+            )
+            .to(
+              background,
+              {
+                xPercent: -25,
+                yPercent: 0,
+                height: "65%",
+                width: "65%",
+                backgroundSize: "100% 100%",
+                // Zoom 
+              },
+              "+=0.1"
+            )
+
+            .to(
+              hermanos.filter((hermano) => hermano !== elemento),
+              {
+                opacity: 0,
+                display: "none",
+              },
+              "<"
+            )
+        });
+      });
+
+      // Agrega un onclick a mi .navbar
+      const navbar = document.querySelector(".navbar");
+      navbar.addEventListener("click", () => {
+        tl.reverse();
+        // Limpiar mi tl
       });
 
       const images = gsap.utils.toArray(".parallax");
