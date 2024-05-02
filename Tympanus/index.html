@@ -51,6 +51,28 @@
       <div class="contenedor-escenas">
         <div class="elemento-parallax">
           <div class="columna-1">
+            <div class="regresar">
+              <svg
+                fill="#ffffff"
+                version="1.1"
+                viewBox="144 144 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#ffffff"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="m310.1 521.39c2.9531 2.9805 6.9805 4.6562 11.176 4.6562 4.1992 0 8.2227-1.6758 11.18-4.6562 2.9805-2.957 4.6562-6.9805 4.6562-11.18s-1.6758-8.2227-4.6562-11.18l-83.445-83.285h339.91c5.625 0 10.824-3 13.637-7.8711s2.8125-10.875 0-15.746-8.0117-7.8711-13.637-7.8711h-339.91l83.445-83.285c3.9922-3.9922 5.5547-9.8164 4.0898-15.27-1.4609-5.457-5.7227-9.7188-11.176-11.18-5.457-1.4609-11.277 0.097657-15.27 4.0938l-110.21 110.21h-0.003906c-2.9805 2.957-4.6562 6.9805-4.6562 11.18 0 4.1953 1.6758 8.2188 4.6562 11.176z"
+                  ></path>
+                </g>
+              </svg>
+              <p>GO BACK</p>
+            </div>
             <div data-speed="200" class="background background-1 parallax">
               <div data-speed="20" class="texto parallax">
                 <div class="texto-grande">
@@ -135,9 +157,13 @@
       gsap.registerPlugin(ScrollTrigger);
 
       let tl = gsap.timeline({
-        defaults: { ease: "power1.out", duration: 1, onComplete: () => {
-          animacion = false;
-        }},
+        defaults: {
+          ease: "power1.out",
+          duration: 1,
+          onComplete: () => {
+            animacion = false;
+          },
+        },
       });
 
       // Poner a todos mis elemento-parallax el listeenr de on click
@@ -162,17 +188,18 @@
           const textoPequeno = elemento.querySelector(".texto-pequeno");
           const columna = elemento.querySelector(".columna-1");
           const background = elemento.querySelector(".background");
-          const contenedorEscenas = elemento.querySelector(".contenedor-escenas-small");
+          const regresar = elemento.querySelector(".regresar");
+          const contenedorEscenas = elemento.querySelector(
+            ".contenedor-escenas-small"
+          );
           // Obtener todos los elementos de la clase elemento
-          let elementosEscenas =  Array.from(contenedorEscenas.children);
+          let elementosEscenas = Array.from(contenedorEscenas.children);
           // Obtener los demás elementos hermanos
           const hermanos = Array.from(elemento.parentElement.children);
-          
 
           // Animar el texto con efecto de salida ventana
           tl = gsap.timeline({
-            defaults: { duration: 1, ease: "power2.inOut"
- },
+            defaults: { duration: 1, ease: "power2.inOut" },
           });
 
           tl.to(textoGrande, {
@@ -186,7 +213,6 @@
                 y: 50,
                 opacity: 0,
                 display: "none",
-
               },
               "<"
             )
@@ -195,9 +221,9 @@
               {
                 xPercent: -20,
                 yPercent: 30,
-                scaleX: .6,
-                
-                // Zoom 
+                scaleX: 0.6,
+
+                // Zoom
                 backgroundSize: "100% 100%",
               },
               "+=0.1"
@@ -209,10 +235,14 @@
               },
               "<"
             )
-            .to(".body", {
-              // Ocultar la barrar de navegacion
-              overflowY: "hidden",
-            }, "<")
+            .to(
+              ".body",
+              {
+                // Ocultar la barrar de navegacion
+                overflowY: "hidden",
+              },
+              "<"
+            )
             .to(
               contenedorEscenas,
               {
@@ -220,7 +250,6 @@
                 width: "45%",
                 height: "35%",
                 marginTop: "10%",
-                
               },
               "<"
             )
@@ -237,6 +266,12 @@
               },
               "<"
             )
+            .to(
+              regresar,
+              {
+                opacity: 1,
+              }, "<",
+            )
         });
       });
 
@@ -245,7 +280,6 @@
       navbar.addEventListener("click", () => {
         tl.reverse();
         animacion = false;
-
       });
 
       const images = gsap.utils.toArray(".parallax");
