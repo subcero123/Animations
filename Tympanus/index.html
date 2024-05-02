@@ -251,8 +251,6 @@
           </div>
         </div>
 
-
-
         <!-- <div class="elemento-parallax">
           <div data-speed="200" class="background background-2 parallax">
             <div data-speed="20" class="texto parallax">
@@ -315,8 +313,8 @@
           // Mover el scroll a la posicion del index
           window.scrollTo({
             // Ir donde empieza el elemento
-            top: index * (window.innerHeight),
-            
+            top: index * window.innerHeight,
+
             behavior: "smooth",
           });
 
@@ -346,7 +344,6 @@
           let elementosEscenas = Array.from(contenedorEscenas.children);
           // Obtener los demás elementos hermanos
           const hermanos = Array.from(elemento.parentElement.children);
-          
 
           // Animar el texto con efecto de salida ventana
           tl = gsap.timeline({
@@ -448,20 +445,26 @@
               regresar,
               {
                 opacity: 1,
-              }, "<",
+              },
+              "<"
             )
-            .to(elementosTexto, {
-              yPercent: 200,
-            }, "-=1.1")
+            .to(
+              elementosTexto,
+              {
+                yPercent: 200,
+              },
+              "-=1.1"
+            );
         });
       });
 
-      
       const navbar = document.querySelector(".navbar");
       navbar.addEventListener("click", () => {
         tl.reverse();
         animacion = false;
       });
+
+      // Modificar velocidad del scroll
 
       const images = gsap.utils.toArray(".parallax");
       images.forEach((image) => {
@@ -472,7 +475,7 @@
 
             backgroundPositionY: -image.dataset.speed + "px",
             scrollTrigger: {
-              scrub: true,
+              scrub: 2,
             },
           });
         } else {
