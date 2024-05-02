@@ -160,21 +160,21 @@ body {
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 {
   display: none;
   flex-direction: column;
-  align-items: normal;
   margin-left: 2%;
-  justify-content: center;
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-texto-principal {
   color: white;
   overflow: hidden;
-  font-size: 5rem;
+  font-size: 6.5rem;
   font-family: "Salih Kizilkaya";
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-autor {
+  margin-top: 5%;
   color: #767474;
   font-size: 1.2rem;
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-undefined {
+  margin-top: 5%;
   color: white;
   font-size: 1rem;
 }
