@@ -66,45 +66,52 @@ body {
   justify-content: center;
   align-items: center;
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 {
   width: 100%;
-  height: 90%;
+  height: 94%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-size: 150% 150%;
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background:hover {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background:hover {
   cursor: pointer;
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background-1 {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background-1 {
   background-image: url("../1.jpg");
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background-2 {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background-2 {
   background-image: url("../2.jpg");
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background-3 {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background-3 {
   background-image: url("../3.jpg");
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background-4 {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background-4 {
   background-image: url("../4.jpg");
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background-5 {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background-5 {
   background-image: url("../5.jpg");
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background-6 {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background-6 {
   background-image: url("../6.jpg");
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background-7 {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background-7 {
   background-image: url("../7.jpg");
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background-8 {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background-8 {
   background-image: url("../8.jpg");
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background-9 {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background-9 {
   background-image: url("../9.jpg");
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background .texto {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background .texto {
   color: white;
   font-size: 8rem;
   line-height: 0px;
@@ -112,11 +119,11 @@ body {
   text-align: center;
   font-family: "Salih Kizilkaya";
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background .texto .texto-grande {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background .texto .texto-grande {
   overflow: hidden;
   width: 100%;
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background .texto .texto-pequeno {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background .texto .texto-pequeno {
   font-family: "Botanika Mono";
   display: flex;
   flex-direction: column;
@@ -125,9 +132,16 @@ body {
   font-size: 1.1rem;
   margin-top: -50px;
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .background .texto .texto-pequeno p {
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background .texto .texto-pequeno p {
   line-height: 0px;
   margin-bottom: 0px;
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .contenedor-escenas-small {
+  display: none;
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .contenedor-escenas-small .elemento {
+  background-image: url("../1.jpg");
+  display: none;
 }
 
 .bold {

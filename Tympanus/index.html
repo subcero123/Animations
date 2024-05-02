@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
 
-  <body>
+  <body class="body">
     <div class="contenedor-general">
       <div class="navbar">
         <div class="titulo-final">
@@ -50,21 +50,53 @@
 
       <div class="contenedor-escenas">
         <div class="elemento-parallax">
-          <div data-speed="200" class="background background-1 parallax">
-            <div data-speed="20" class="texto parallax">
-              <div class="texto-grande">
-                <p>Andesite</p>
-                <p class="bold">aphanitic</p>
+          <div class="columna-1">
+            <div data-speed="200" class="background background-1 parallax">
+              <div data-speed="20" class="texto parallax">
+                <div class="texto-grande">
+                  <p>Andesite</p>
+                  <p class="bold">aphanitic</p>
+                </div>
+                <div class="texto-pequeno">
+                  <p>A VOLCANIC ROCK OF INTERMEDIATE</p>
+                  <p>COMPOSITION, BETWEEN SILICA-POOR</p>
+                  <p>BASALT AND SILICA-RICH-RHYOLITE</p>
+                </div>
               </div>
-              <div class="texto-pequeno">
-                <p>A VOLCANIC ROCK OF INTERMEDIATE</p>
-                <p>COMPOSITION, BETWEEN SILICA-POOR</p>
-                <p>BASALT AND SILICA-RICH-RHYOLITE</p>
-              </div>
+            </div>
+            <div class="contenedor-escenas-small">
+              <div class="elemento elemento-1"></div>
+              <div class="elemento elemento-2"></div>
+              <div class="elemento elemento-3"></div>
+              <div class="elemento elemento-4"></div>
             </div>
           </div>
         </div>
         <div class="elemento-parallax">
+          <div class="columna-1">
+            <div data-speed="200" class="background background-1 parallax">
+              <div data-speed="20" class="texto parallax">
+                <div class="texto-grande">
+                  <p>Andesite</p>
+                  <p class="bold">aphanitic</p>
+                </div>
+                <div class="texto-pequeno">
+                  <p>A VOLCANIC ROCK OF INTERMEDIATE</p>
+                  <p>COMPOSITION, BETWEEN SILICA-POOR</p>
+                  <p>BASALT AND SILICA-RICH-RHYOLITE</p>
+                </div>
+              </div>
+            </div>
+            <div class="contenedor-escenas-small">
+              <div class="elemento elemento-1"></div>
+              <div class="elemento elemento-2"></div>
+              <div class="elemento elemento-3"></div>
+              <div class="elemento elemento-4"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="elemento-parallax">
           <div data-speed="200" class="background background-2 parallax">
             <div data-speed="20" class="texto parallax">
               <div class="texto-grande">
@@ -78,67 +110,7 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="elemento-parallax">
-          <div data-speed="200" class="background background-1 parallax">
-            <div data-speed="20" class="texto parallax">
-              <div class="texto-grande">
-                <p>Andesite</p>
-                <p class="bold">aphanitic</p>
-              </div>
-              <div class="texto-pequeno">
-                <p>A VOLCANIC ROCK OF INTERMEDIATE</p>
-                <p>COMPOSITION, BETWEEN SILICA-POOR</p>
-                <p>BASALT AND SILICA-RICH-RHYOLITE</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="elemento-parallax">
-          <div data-speed="200" class="background background-2 parallax">
-            <div data-speed="20" class="texto parallax">
-              <div class="texto-grande">
-                <p>Batholith</p>
-                <p class="bold">plutonic</p>
-              </div>
-              <div class="texto-pequeno">
-                <p>A LARGE MASS OF INTRUSIVE IGNEOUS</p>
-                <p>ROCK MADE MOSTLY OF FELSIC OR</p>
-                <p>INTERMEDIATE ROCK TYPES.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="elemento-parallax">
-          <div data-speed="200" class="background background-1 parallax">
-            <div data-speed="20" class="texto parallax">
-              <div class="texto-grande">
-                <p>Andesite</p>
-                <p class="bold">aphanitic</p>
-              </div>
-              <div class="texto-pequeno">
-                <p>A VOLCANIC ROCK OF INTERMEDIATE</p>
-                <p>COMPOSITION, BETWEEN SILICA-POOR</p>
-                <p>BASALT AND SILICA-RICH-RHYOLITE</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="elemento-parallax">
-          <div data-speed="200" class="background background-2 parallax">
-            <div data-speed="20" class="texto parallax">
-              <div class="texto-grande">
-                <p>Batholith</p>
-                <p class="bold">plutonic</p>
-              </div>
-              <div class="texto-pequeno">
-                <p>A LARGE MASS OF INTRUSIVE IGNEOUS</p>
-                <p>ROCK MADE MOSTLY OF FELSIC OR</p>
-                <p>INTERMEDIATE ROCK TYPES.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -157,17 +129,26 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
     <script>
       // smooth scroll
+      // Bandera animación en curso
+      let animacion = false;
 
       gsap.registerPlugin(ScrollTrigger);
 
       let tl = gsap.timeline({
-        defaults: { ease: "power1.out", duration: 1 },
+        defaults: { ease: "power1.out", duration: 1, onComplete: () => {
+          animacion = false;
+        }},
       });
 
       // Poner a todos mis elemento-parallax el listeenr de on click
       const elementos = document.querySelectorAll(".elemento-parallax");
       elementos.forEach((elemento) => {
         elemento.addEventListener("click", () => {
+          // Si la animación esta en curso, no hacer nada
+          if (animacion) return;
+          // Poner la bandera en true
+          animacion = true;
+
           // Obtener el index del elemento
           const index = Array.from(elementos).indexOf(elemento);
           // Mover el scroll a la posicion del index
@@ -179,8 +160,11 @@
           // Obtener su textogrande y pequeño
           const textoGrande = elemento.querySelector(".texto-grande");
           const textoPequeno = elemento.querySelector(".texto-pequeno");
+          const columna = elemento.querySelector(".columna-1");
           const background = elemento.querySelector(".background");
-
+          const contenedorEscenas = elemento.querySelector(".contenedor-escenas-small");
+          // Obtener todos los elementos de la clase elemento
+          let elementosEscenas =  Array.from(contenedorEscenas.children);
           // Obtener los demás elementos hermanos
           const hermanos = Array.from(elemento.parentElement.children);
           
@@ -194,12 +178,14 @@
           tl.to(textoGrande, {
             y: 50,
             opacity: 0,
+            display: "none",
           })
             .to(
               textoPequeno,
               {
                 y: 50,
                 opacity: 0,
+                display: "none",
 
               },
               "<"
@@ -207,21 +193,47 @@
             .to(
               background,
               {
-                xPercent: -25,
-                yPercent: 0,
-                height: "65%",
-                width: "65%",
-                backgroundSize: "100% 100%",
+                xPercent: -20,
+                yPercent: 30,
+                scaleX: .6,
+                
                 // Zoom 
+                backgroundSize: "100% 100%",
               },
               "+=0.1"
             )
-
             .to(
               hermanos.filter((hermano) => hermano !== elemento),
               {
                 opacity: 0,
-                display: "none",
+              },
+              "<"
+            )
+            .to(".body", {
+              // Ocultar la barrar de navegacion
+              overflowY: "hidden",
+            }, "<")
+            .to(
+              contenedorEscenas,
+              {
+                display: "flex",
+                width: "45%",
+                height: "35%",
+                marginTop: "10%",
+                
+              },
+              "<"
+            )
+            .to(
+              elementosEscenas,
+              {
+                display: "flex",
+                width: "15%",
+                height: "40%",
+                opacity: 1,
+                stagger: 0.1,
+                // Margen derecho
+                marginRight: "5%",
               },
               "<"
             )
@@ -232,7 +244,8 @@
       const navbar = document.querySelector(".navbar");
       navbar.addEventListener("click", () => {
         tl.reverse();
-        // Limpiar mi tl
+        animacion = false;
+
       });
 
       const images = gsap.utils.toArray(".parallax");
