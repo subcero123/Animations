@@ -93,6 +93,28 @@
               <div class="elemento elemento-4"></div>
             </div>
           </div>
+          <div class="columna-2">
+            <div class="contenedor-texto-principal">
+              <span class="contenedor">
+                <p class="titulo-2">Andesite</p>
+              </span>
+            </div>
+            <div class="contenedor-texto-principal">
+              <span class="contenedor">
+                <p class="titulo-2 bold">aphanitic</p>
+              </span>
+            </div>
+            <div class="contenedor-autor">
+              <div class="contenedor">
+                <p class="titulo-2">By James Maurice Rojo</p>
+              </div>
+            </div>
+            <div class="contenedor-undefined">
+              <div class="contenedor">
+                <p class="titulo-2">undefined</p>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="elemento-parallax">
           <div class="columna-1">
@@ -179,23 +201,31 @@
           const index = Array.from(elementos).indexOf(elemento);
           // Mover el scroll a la posicion del index
           window.scrollTo({
-            top: (window.innerHeight - 100) * index,
+            top: (window.innerHeight) * index,
             behavior: "smooth",
           });
 
           // Obtener su textogrande y pequeño
           const textoGrande = elemento.querySelector(".texto-grande");
           const textoPequeno = elemento.querySelector(".texto-pequeno");
-          const columna = elemento.querySelector(".columna-1");
+          const columna1 = elemento.querySelector(".columna-1");
+          const columna2 = elemento.querySelector(".columna-2");
           const background = elemento.querySelector(".background");
           const regresar = elemento.querySelector(".regresar");
           const contenedorEscenas = elemento.querySelector(
             ".contenedor-escenas-small"
           );
+          // Obtener los textos de .titulo-2
+          const elementosTexto = Array.from(
+            elemento.querySelectorAll(".titulo-2")
+          );
+
+          const columnaEscenas = elemento.querySelector(".columna-1");
           // Obtener todos los elementos de la clase elemento
           let elementosEscenas = Array.from(contenedorEscenas.children);
           // Obtener los demás elementos hermanos
           const hermanos = Array.from(elemento.parentElement.children);
+          
 
           // Animar el texto con efecto de salida ventana
           tl = gsap.timeline({
@@ -217,21 +247,34 @@
               "<"
             )
             .to(
-              background,
+              columna1,
               {
-                xPercent: -20,
-                yPercent: 30,
-                scaleX: 0.6,
-
-                // Zoom
-                backgroundSize: "100% 100%",
+                width: "60%",
               },
               "+=0.1"
             )
             .to(
+              columna2,
+              {
+                display: "flex",
+                width: "40%",
+                height: "70%",
+              },
+              "<"
+            )
+            .to(
+              background,
+              {
+                yPercent: 5,
+                backgroundSize: "100% 100%",
+                marginTop: "5%",
+              },
+              "<"
+            )
+            .to(
               hermanos.filter((hermano) => hermano !== elemento),
               {
-                opacity: 0,
+                display: "none",
               },
               "<"
             )
@@ -247,9 +290,9 @@
               contenedorEscenas,
               {
                 display: "flex",
-                width: "45%",
-                height: "35%",
-                marginTop: "10%",
+                width: "75%",
+                height: "25%",
+                yPercent: 35,
               },
               "<"
             )
@@ -272,10 +315,13 @@
                 opacity: 1,
               }, "<",
             )
+            .to(elementosTexto, {
+              yPercent: 200,
+            }, "-=0.7")
         });
       });
 
-      // Agrega un onclick a mi .navbar
+      
       const navbar = document.querySelector(".navbar");
       navbar.addEventListener("click", () => {
         tl.reverse();
@@ -290,7 +336,6 @@
             // Mover el background-image en el eje Y
 
             backgroundPositionY: -image.dataset.speed + "px",
-            invalidateOnRefresh: true,
             scrollTrigger: {
               scrub: true,
             },
@@ -298,7 +343,6 @@
         } else {
           gsap.to(image, {
             yPercent: -image.dataset.speed,
-            invalidateOnRefresh: true,
             scrollTrigger: {
               trigger: image,
               scrub: true,
