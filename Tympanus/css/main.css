@@ -93,7 +93,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: 150% 150%;
+  background-size: 200% 200%;
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background:hover {
   cursor: pointer;
@@ -154,8 +154,19 @@ body {
   display: none;
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .contenedor-escenas-small .elemento {
-  background-image: url("../1.jpg");
   display: none;
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .contenedor-escenas-small .elemento-1 {
+  background-position: 0% 0%;
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .contenedor-escenas-small .elemento-2 {
+  background-position: 0% 100%;
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .contenedor-escenas-small .elemento-3 {
+  background-position: 100% 0%;
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .contenedor-escenas-small .elemento-4 {
+  background-position: 100% 100%;
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 {
   display: none;
@@ -169,7 +180,6 @@ body {
   font-family: "Salih Kizilkaya";
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-autor {
-  margin-top: 5%;
   color: #767474;
   font-size: 1.2rem;
 }
@@ -185,7 +195,10 @@ body {
   margin: 0px;
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor .titulo-2 {
-  transform: translate(0px, -200%);
+  transform: translate(0px, -100%);
+}
+.contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor .titulo-2--secundario {
+  opacity: 0;
 }
 
 .bold {

@@ -118,7 +118,7 @@ body {
           justify-content: center;
           align-items: center;
           // Hacer zoom en la imagen
-          background-size: 150% 150%;
+          background-size: 200% 200%;
           &:hover{
             cursor: pointer;
           }
@@ -186,8 +186,21 @@ body {
           display: none;
 
           .elemento{
-            background-image:  url('../1.jpg');
             display: none;
+
+            &-1{
+              // Tomar diferentes posiciones
+              background-position: 0% 0%;
+            }
+            &-2{
+              background-position: 0% 100%;
+            }
+            &-3{
+              background-position: 100% 0%;
+            }
+            &-4{
+              background-position: 100% 100%;
+            }
 
             
           }
@@ -209,7 +222,6 @@ body {
         }
 
         .contenedor-autor{
-          margin-top: 5%;
           color: #767474;
           font-size: 1.2rem;
         }
@@ -218,6 +230,7 @@ body {
           margin-top: 5%;
           color: white;
           font-size: 1rem;
+
 
         }
 
@@ -228,7 +241,11 @@ body {
           }
 
           .titulo-2{
-            transform: translate(0px, -200%);
+            transform: translate(0px, -100%);
+
+            &--secundario{
+              opacity: 0;
+            }
           } 
         }
       }

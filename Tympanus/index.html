@@ -87,10 +87,10 @@
               </div>
             </div>
             <div class="contenedor-escenas-small">
-              <div class="elemento elemento-1"></div>
-              <div class="elemento elemento-2"></div>
-              <div class="elemento elemento-3"></div>
-              <div class="elemento elemento-4"></div>
+              <div class="background-1 elemento-1"></div>
+              <div class="background-1 elemento elemento-2"></div>
+              <div class="background-1 elemento elemento-3"></div>
+              <div class="background-1 elemento elemento-4"></div>
             </div>
           </div>
           <div class="columna-2">
@@ -106,7 +106,7 @@
             </div>
             <div class="contenedor-autor">
               <div class="contenedor">
-                <p class="titulo-2">By James Maurice Rojo</p>
+                <p class="titulo-2--secundario">By James Maurice Rojo</p>
               </div>
             </div>
             <div class="contenedor-undefined">
@@ -114,6 +114,8 @@
                 <p class="titulo-2">undefined</p>
               </div>
             </div>
+
+            
           </div>
         </div>
         <div class="elemento-parallax">
@@ -154,10 +156,10 @@
               </div>
             </div>
             <div class="contenedor-escenas-small">
-              <div class="elemento elemento-1"></div>
-              <div class="elemento elemento-2"></div>
-              <div class="elemento elemento-3"></div>
-              <div class="elemento elemento-4"></div>
+              <div class="background-2  elemento-1"></div>
+              <div class="background-2 elemento elemento-2"></div>
+              <div class="background-2 elemento elemento-3"></div>
+              <div class="background-2 elemento elemento-4"></div>
             </div>
           </div>
           <div class="columna-2">
@@ -173,7 +175,7 @@
             </div>
             <div class="contenedor-autor">
               <div class="contenedor">
-                <p class="titulo-2">By James Maurice Rojo</p>
+                <p class="titulo-2--secundario">By James Maurice Rojo</p>
               </div>
             </div>
             <div class="contenedor-undefined">
@@ -221,10 +223,10 @@
               </div>
             </div>
             <div class="contenedor-escenas-small">
-              <div class="elemento elemento-1"></div>
-              <div class="elemento elemento-2"></div>
-              <div class="elemento elemento-3"></div>
-              <div class="elemento elemento-4"></div>
+              <div class="background-3 elemento elemento-1"></div>
+              <div class="background-3 elemento elemento-2"></div>
+              <div class="background-3 elemento elemento-3"></div>
+              <div class="background-3 elemento elemento-4"></div>
             </div>
           </div>
           <div class="columna-2">
@@ -240,7 +242,7 @@
             </div>
             <div class="contenedor-autor">
               <div class="contenedor">
-                <p class="titulo-2">By James Maurice Rojo</p>
+                <p class="titulo-2--secundario">By James Maurice Rojo</p>
               </div>
             </div>
             <div class="contenedor-undefined">
@@ -287,6 +289,20 @@
       // Bandera animación en curso
       let animacion = false;
 
+      // Agregar un event listener a mis elementos .regresar
+      const regresar = document.querySelectorAll(".regresar");
+      regresar.forEach((elemento) => {
+          console.log("hola");
+          elemento.addEventListener("click", function animarRegreso(){
+            console.log("click");
+            tl.reverse();
+            setTimeout(() => {
+              animacion = false;
+            }, tl.totalTime() * 1000);
+          });
+      });
+
+
       gsap.registerPlugin(ScrollTrigger);
 
       let tl = gsap.timeline({
@@ -307,7 +323,6 @@
           if (animacion) return;
           // Poner la bandera en true
           animacion = true;
-
           // Obtener el index del elemento
           const index = Array.from(elementos).indexOf(elemento);
           // Mover el scroll a la posicion del index
@@ -329,8 +344,6 @@
           const nextSibling = elemento.nextElementSibling;
           // Obtener prevSibling
           const prevSibling = elemento.previousElementSibling;
-          console.log(prevSibling);
-          console.log(nextSibling);
           const contenedorEscenas = elemento.querySelector(
             ".contenedor-escenas-small"
           );
@@ -338,6 +351,8 @@
           const elementosTexto = Array.from(
             elemento.querySelectorAll(".titulo-2")
           );
+
+          const titulo2Autor = elemento.querySelector(".titulo-2--secundario");
 
           const columnaEscenas = elemento.querySelector(".columna-1");
           // Obtener todos los elementos de la clase elemento
@@ -451,18 +466,26 @@
             .to(
               elementosTexto,
               {
-                yPercent: 200,
+                yPercent: 100,
               },
               "-=1.1"
+            )
+            .to(
+              titulo2Autor,
+              {
+                yPercent: 1,
+                opacity: 1,
+              },
+              "<"
             );
         });
       });
 
-      const navbar = document.querySelector(".navbar");
-      navbar.addEventListener("click", () => {
-        tl.reverse();
-        animacion = false;
-      });
+      // const navbar = document.querySelector(".navbar");
+      // navbar.addEventListener("click", () => {
+      //   tl.reverse();
+      //   animacion = false;
+      // });
 
       // Modificar velocidad del scroll
 
