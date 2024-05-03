@@ -48,6 +48,8 @@
         </div>
       </div>
 
+
+
       <div class="contenedor-escenas">
         <div class="elemento-parallax">
           <div class="columna-1">
@@ -301,6 +303,13 @@
             }, tl.totalTime() * 1000);
           });
       });
+
+      gsap.from(".body", {
+        opacity: 0,
+        duration: 1.3,
+        y: -100
+      });
+
 
 
       gsap.registerPlugin(ScrollTrigger);
