@@ -15,9 +15,8 @@ body {
   display: flex;
 }
 .contenedor-general .navbar {
-  width: 8%;
   height: 97%;
-  font-size: 1.2rem;
+  font-size: 0.6rem;
   position: sticky;
   display: flex;
   font-family: "Botanika Mono";
@@ -27,6 +26,12 @@ body {
   transform: rotate(180deg);
   padding: 5px;
   line-height: 20px;
+}
+@media (min-width: 768px) {
+  .contenedor-general .navbar {
+    font-size: 1.2rem;
+    width: 8%;
+  }
 }
 .contenedor-general .navbar a {
   text-decoration: none;
@@ -127,11 +132,21 @@ body {
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background .texto {
   color: white;
-  font-size: 8rem;
+  font-size: 2rem;
   line-height: 0px;
   width: 100%;
   text-align: center;
   font-family: "Salih Kizilkaya";
+}
+@media (min-width: 768px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background .texto {
+    font-size: 7rem;
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background .texto {
+    font-size: 8rem;
+  }
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background .texto .texto-grande {
   overflow: hidden;
@@ -143,8 +158,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.1rem;
-  margin-top: -50px;
+  font-size: 0.6rem;
+  margin-top: 0px;
+}
+@media (min-width: 768px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background .texto .texto-pequeno {
+    font-size: 1rem;
+    margin-top: -50px;
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background .texto .texto-pequeno {
+    font-size: 1.1rem;
+    margin-top: -50px;
+  }
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background .texto .texto-pequeno p {
   line-height: 0px;

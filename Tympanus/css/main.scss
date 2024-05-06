@@ -8,6 +8,19 @@
   src: url('../fonts/Botanika\ Mono\ Regular.otf') format('truetype'); /* Ruta al archivo de la fuente */
 }
 
+// Mixin para tablet y desktop
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
 
 
 $color-texto-secundario: #646363;
@@ -22,9 +35,8 @@ body {
   display: flex;
 
   .navbar{
-    width: 8%;
     height: 97%;
-    font-size: 1.2rem;
+    font-size: .6rem;
     position: sticky;
     display: flex;
     
@@ -37,6 +49,12 @@ body {
     transform: rotate(180deg);
     padding: 5px;
     line-height: 20px;
+
+    // tablet
+    @include tablet{
+      font-size: 1.2rem;
+      width: 8%;
+    }
 
     // Quitar decoracion de a
     a{
@@ -152,12 +170,22 @@ body {
     
           .texto{
             color: white;
-            font-size: 8rem;
+            font-size: 2rem;
             line-height: 0px;
             width: 100%;
             text-align: center;
             
             font-family: 'Salih Kizilkaya';
+
+            // Tablet
+            @include tablet{
+              font-size: 7rem;
+            }
+
+            // Desktop
+            @include desktop{
+              font-size: 8rem;
+            }
             
             .texto-grande{
               overflow: hidden;
@@ -171,8 +199,20 @@ body {
               flex-direction: column;
               justify-content: center;
               align-items: center;
-              font-size: 1.1rem;
-              margin-top: -50px;
+              font-size: 0.6rem;
+              margin-top: 0px;
+
+              // Tablet
+              @include tablet{
+                font-size: 1rem;
+                margin-top: -50px;
+              }
+
+              // Desktop
+              @include desktop{
+                font-size: 1.1rem;
+                margin-top: -50px;
+              }
               
               p{
                 line-height: 0px;
