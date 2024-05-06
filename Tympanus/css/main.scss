@@ -252,24 +252,73 @@ body {
 
       .columna-2{
         display: none;
-        flex-direction: column;
+        flex-direction: row-reverse;
+        align-items: center;
         margin-left: 2%;
+
+        // Tablet
+        @include tablet{
+          flex-direction: column;
+        }
+
         .contenedor-texto-principal{
           color: white;
           overflow: hidden;
-          font-size: 6.5rem;
+          font-size: 4rem;
           font-family: 'Salih Kizilkaya';
+          // Texto vertical
+          writing-mode: vertical-rl;
+
+
+          // Tablet
+          @include tablet{
+            font-size: 6rem;
+            writing-mode:horizontal-tb;
+
+          }
+
+          // Desktop
+          @include desktop{
+            writing-mode:horizontal-tb;
+
+            font-size: 6.5rem;
+          }
         }
 
         .contenedor-autor{
           color: #767474;
           font-size: 1.2rem;
+          writing-mode: vertical-rl;
+
+          // Tablet
+          @include tablet{
+            writing-mode:horizontal-tb;
+          }
+
+          // Desktop
+          @include desktop{
+            writing-mode:horizontal-tb;
+          }
+
         }
 
         .contenedor-undefined{
           margin-top: 5%;
           color: white;
           font-size: 1rem;
+          writing-mode: vertical-rl;
+
+
+          // Tablet
+          @include tablet{
+            writing-mode:horizontal-tb;
+          }
+
+          // Desktop
+          @include desktop{
+            writing-mode:horizontal-tb;
+          }
+
 
 
         }
@@ -281,7 +330,17 @@ body {
           }
 
           .titulo-2{
-            transform: translate(0px, -100%);
+            
+
+            // Tablet
+            @include tablet{
+              transform: translate(0px, -100%);
+            }
+
+            // Desktop
+            @include desktop{
+              transform: translate(0px, -100%);
+            }
 
             &--secundario{
               opacity: 0;

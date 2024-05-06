@@ -197,23 +197,64 @@ body {
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 {
   display: none;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  align-items: center;
   margin-left: 2%;
+}
+@media (min-width: 768px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 {
+    flex-direction: column;
+  }
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-texto-principal {
   color: white;
   overflow: hidden;
-  font-size: 6.5rem;
+  font-size: 4rem;
   font-family: "Salih Kizilkaya";
+  writing-mode: vertical-rl;
+}
+@media (min-width: 768px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-texto-principal {
+    font-size: 6rem;
+    writing-mode: horizontal-tb;
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-texto-principal {
+    writing-mode: horizontal-tb;
+    font-size: 6.5rem;
+  }
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-autor {
   color: #767474;
   font-size: 1.2rem;
+  writing-mode: vertical-rl;
+}
+@media (min-width: 768px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-autor {
+    writing-mode: horizontal-tb;
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-autor {
+    writing-mode: horizontal-tb;
+  }
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-undefined {
   margin-top: 5%;
   color: white;
   font-size: 1rem;
+  writing-mode: vertical-rl;
+}
+@media (min-width: 768px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-undefined {
+    writing-mode: horizontal-tb;
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor-undefined {
+    writing-mode: horizontal-tb;
+  }
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor {
   overflow: hidden;
@@ -221,8 +262,15 @@ body {
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor p {
   margin: 0px;
 }
-.contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor .titulo-2 {
-  transform: translate(0px, -100%);
+@media (min-width: 768px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor .titulo-2 {
+    transform: translate(0px, -100%);
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor .titulo-2 {
+    transform: translate(0px, -100%);
+  }
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-2 .contenedor .titulo-2--secundario {
   opacity: 0;
