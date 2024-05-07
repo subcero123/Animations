@@ -84,7 +84,7 @@ body {
 }
 .escena-principal .container-principal .contenedor-imagenes .card {
   position: absolute;
-  width: 100px;
+  width: 90px;
   height: 150px;
   transform-origin: 50% 210px;
 }
