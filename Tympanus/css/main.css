@@ -98,7 +98,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: 200% 200%;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background {
+    background-size: 200% 200%;
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background {
+    background-size: 200% 200%;
+  }
 }
 .contenedor-general .contenedor-escenas .elemento-parallax .columna-1 .background:hover {
   cursor: pointer;

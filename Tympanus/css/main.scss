@@ -136,7 +136,19 @@ body {
           justify-content: center;
           align-items: center;
           // Hacer zoom en la imagen
-          background-size: 200% 200%;
+          background-size: cover;
+
+          // Tablet
+          @include tablet{
+            background-size: 200% 200%;
+          }
+
+          // Desktop
+          @include desktop{
+            background-size: 200% 200%;
+          }
+
+
           &:hover{
             cursor: pointer;
           }
