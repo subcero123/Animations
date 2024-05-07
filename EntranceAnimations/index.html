@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrance Animations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <div class="escena-principal">
+      <div class="navbar">
+        <div class="seccion-1">
+          <a class="selected" href="#">ENTRANCE ANIMATIONS FOR IMAGES</a>
+          <a href="#">ARTICLE</a>
+          <a href="#">ALL DEMOS</a>
+          <a href="#">GITHUB</a>
+        </div>
+        <div class="seccion-2">
+          <a href="#"
+            >THE EASIEST WAY TO ANIMATE LOTTIE IS LIVE: COMPLETELY FREE
+            UNLIMITED EXPORTS WITH SVGATOR.
+          </a>
+        </div>
+      </div>
+
+      <div class="container-principal">
+        <div class="texto-principal">
+          <div class="titulo">
+            <span>ASTRAL</span>
+            <span>AESTHETICS</span>
+          </div>
+          <div class="fecha">
+            <p>2024</p>
+          </div>
+        </div>
+
+        <div class="contenedor-imagenes">
+          <div class="card">
+            <div class="img img-1"></div>
+          </div>
+          <div class="card">
+            <div class="img img-2"></div>
+          </div>
+          <div class="card">
+            <div class="img img-3"></div>
+          </div>
+          <div class="card">
+            <div class="img img-4"></div>
+          </div>
+          <div class="card">
+            <div class="img img-5"></div>
+          </div>
+          <div class="card">
+            <div class="img img-6"></div>
+          </div>
+          <div class="card">
+            <div class="img img-7"></div>
+          </div>
+          <div class="card">
+            <div class="img img-8"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script>
+      // smooth scroll
+
+      gsap.registerPlugin(ScrollTrigger);
+      const image = document.querySelector(".img");
+      const radius1 = 50 + image.clientHeight / 2;
+
+
+      const tl = gsap.timeline({
+        defaults: { ease: "power1.out", duration: 1 },
+      });
+
+      // Obtener todas las imagenes con gsap
+      const imgs = gsap.utils.toArray(".card");
+      // Arreglo de imagenes invertido
+      const imgsReverse = () => [...imgs];
+      // Arreglo de imagenes
+      const imgsOg = gsap.utils.toArray(".img");
+      console.log(imgs.length);
+
+      tl.from(imgs, { yPercent: 150, rotateX: 200, opacity: 0, stagger: 0.2, scale: 2 })
+        // Animar en forma de circulo cada imagen y colocandolas en diferentes posiciones
+        .to(imgs, {
+          y: -150,
+          duration: .5,
+          // Ease suave
+          ease: "power1.inOut",
+        },)
+        .set(".card", {
+          transformOrigin: `center ${radius1 + image.clientHeight / 2}px`,
+        })
+        .to(imgsReverse(), {
+          rotate: (index) => {
+              return (index * 360) / imgs.length;
+          },
+          // rotate: 360,
+          duration: 1,
+          ease: "none",
+          stagger: 0.03,
+        }, "<")
+        .to(".contenedor-imagenes", {
+          rotate: 360,
+          duration: 25,
+          repeat: -1,
+          ease: "none",
+        }, "<")
+        .to (imgsOg, {
+          rotateY: 180,
+          y: -90,
+          duration: 1.5,
+          opacity: .8,
+          ease: "power1.inOut",
+        }, "-=24")
+        .from([".titulo", ".fecha"], {
+          opacity: 0,
+          duration: 1.8,
+          // Blur efecto
+          filter: "blur(10px)",
+          ease: "power1.inOut",
+        }, "-=1")
+        
+
+      const lenis = new Lenis();
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>

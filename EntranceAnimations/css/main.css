@@ -1,0 +1,122 @@
+body {
+  background-color: var(#e3efed);
+  background: url(../noise.png), radial-gradient(circle, #e3efed 0%, #8ca9af 100%);
+}
+
+.escena-principal {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  perspective: 1000px;
+  position: relative;
+}
+.escena-principal .navbar {
+  position: absolute;
+  top: 1%;
+  width: 98%;
+  display: flex;
+  font-size: 0.8rem;
+  color: black;
+  justify-content: space-between;
+}
+.escena-principal .navbar .seccion-1 {
+  width: 60%;
+}
+.escena-principal .navbar .seccion-1 a {
+  margin-right: 15px;
+}
+.escena-principal .navbar .seccion-1 .selected {
+  font-weight: bold;
+}
+.escena-principal .navbar .seccion-2 {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (min-width: 768px) {
+  .escena-principal .navbar .seccion-2 {
+    width: 45%;
+  }
+}
+@media (min-width: 1024px) {
+  .escena-principal .navbar .seccion-2 {
+    width: auto;
+  }
+}
+.escena-principal .navbar a {
+  text-decoration: none;
+  color: black;
+}
+.escena-principal .container-principal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.escena-principal .container-principal .texto-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  z-index: 99;
+}
+.escena-principal .container-principal .texto-principal .titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3.9rem;
+}
+.escena-principal .container-principal .texto-principal .fecha {
+  font-size: 1.5rem;
+}
+.escena-principal .container-principal .contenedor-imagenes {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.escena-principal .container-principal .contenedor-imagenes .card {
+  position: absolute;
+  width: 100px;
+  height: 150px;
+  transform-origin: 50% 210px;
+}
+.escena-principal .container-principal .contenedor-imagenes .card .img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.escena-principal .container-principal .contenedor-imagenes .card .img-1 {
+  background-image: url(../img/1.jpg);
+}
+.escena-principal .container-principal .contenedor-imagenes .card .img-2 {
+  background-image: url(../img/2.jpg);
+}
+.escena-principal .container-principal .contenedor-imagenes .card .img-3 {
+  background-image: url(../img/3.jpg);
+}
+.escena-principal .container-principal .contenedor-imagenes .card .img-4 {
+  background-image: url(../img/4.jpg);
+}
+.escena-principal .container-principal .contenedor-imagenes .card .img-5 {
+  background-image: url(../img/5.jpg);
+}
+.escena-principal .container-principal .contenedor-imagenes .card .img-6 {
+  background-image: url(../img/6.jpg);
+}
+.escena-principal .container-principal .contenedor-imagenes .card .img-7 {
+  background-image: url(../img/7.jpg);
+}
+.escena-principal .container-principal .contenedor-imagenes .card .img-8 {
+  background-image: url(../img/8.jpg);
+}
+.escena-principal .container-principal .contenedor-imagenes .card .img-9 {
+  background-image: url(../img/9.jpg);
+}/*# sourceMappingURL=main.css.map */
