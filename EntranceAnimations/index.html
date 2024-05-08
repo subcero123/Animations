@@ -142,7 +142,12 @@
           // Blur efecto
           filter: "blur(10px)",
           ease: "power1.inOut",
+          onComplete: () => {
+            // Al finalizar la animacion, se llama la funcion voltearImagen
+            voltearImagen();
+          },
         }, "-=1")
+        
         
 
       const lenis = new Lenis();
@@ -150,6 +155,29 @@
       function raf(time) {
         lenis.raf(time);
         requestAnimationFrame(raf);
+      }
+
+      function voltearImagen (){
+        let cantidadCards = document.querySelectorAll('.card');
+        // Obtener un index aleatorio en un rango de 0 a la cantidad de cards
+        let index = Math.floor(Math.random() * cantidadCards.length);
+        // Obtener la card con el index aleatorio
+        let card = cantidadCards[index];
+
+        // Esperar un tiempo random entre 1 y 3 segundos
+        let tiempo = Math.floor(Math.random() * 3000) + 1000;
+        setTimeout(() => {  
+          // Animar la card
+          gsap.to(card, {
+            rotateY: 180,
+            duration: 1.5,
+            ease: "power1.inOut",
+            onComplete: () => {
+              // Al finalizar la animacion, se vuelve a llamar la funcion
+              voltearImagen();
+            },
+          });
+        }, tiempo);
       }
 
       requestAnimationFrame(raf);
