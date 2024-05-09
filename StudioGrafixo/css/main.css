@@ -17,7 +17,8 @@ body {
   height: 100%;
   position: absolute;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  grid-template-rows: 0.8fr 1fr 1fr 1fr;
   -moz-column-gap: 5rem;
        column-gap: 5rem;
 }
@@ -93,6 +94,7 @@ body {
 }
 .container-principal .overlay-menu .link-medium p {
   width: 80%;
+  margin: 0px;
 }
 .container-principal .container-video {
   height: 100%;
@@ -119,6 +121,36 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.container-principal .container-animations {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 83%;
+  height: 78%;
+  z-index: 2;
+}
+.container-principal .container-animations .layout {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+.container-principal .container-animations .layout-1 .image-container {
+  grid-area: 1/1/5/5;
+  overflow: hidden;
+}
+.container-principal .container-animations .layout-1 .image-container .image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.container-principal .container-animations .layout-1 .image-container .image-1 {
+  width: 100%;
+  height: 100%;
+  scale: 1.2;
+  background-image: url("../media/1.jpg");
 }
 
 .hover {
