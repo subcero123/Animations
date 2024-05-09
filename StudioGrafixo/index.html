@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split Type</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+
+    <section>
+      <div class="container-principal">
+
+        <div class="overlay-menu">
+          <div class="big-text">
+            <p>BLENDING ARTISTRY WITH TECHNOLOGY, WE TRANSFORM VISIONARY IDEAS INTO TANGIBLE, CAPTIVATING REALITIES THAT INSPIRE AND CONNECT.</p>
+          </div>
+          <div class="small-text">
+            <span>GRAFIXO</span>
+          </div>
+          <div class="small-text">
+            <span>2024</span>
+          </div>
+          <div class="icon">
+            <!-- svg improvisado -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22.5c-5.799 0-10.5-4.701-10.5-10.5S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm-1.5-15.75v7.5l6-3.75-6-3.75z"
+              />
+            </svg>
+          </div>
+          <div class="link large-row">
+            <a href="">GET IN TOUCH</a>
+          </div>
+          <div class="recent-works large-row">
+            <span class="first">RECENT WORKS</span>
+            <span class="works">HEREX AETHER</span>
+            <span class="works">COSMIC SILENCE</span>
+            <span class="works">MYSTIC TRAILS</span>
+            <span class="works">METAPHOR</span>
+            <span class="works">PRISMATICA</span>
+          </div>
+          <div class="medium-text bottom">
+            <span> <span class="hover">#HOVER</span> <span class="hover">#GRID</span> ANIMATIONS</span>
+            <span>WANT ANIMATIONS LIKE THESE? <span class="hover">HIRE US</span> </span>
+          </div>
+          <div class="small-text small-text--links bottom">
+            <a href="">ARTICLE</a>
+            <a href="">ALL DEMOS</a>
+            <a href="">GITHUB</a>
+          </div>
+          <div class="link-medium bottom">
+            <p class="hover">THE EASIEST WAY TO ANIMATE LOTTIE IS LIVE: COMPLETELY FREE UNLIMITED EXPORTS WITH SVGATOR.</p>
+          </div>
+
+        </div>
+        <div class="container-animacion">
+          <div class="container-video">
+            <div class="titulo">
+              <span>Studio</span>
+              <span class="secundario">Grafixo</span>
+            </div>
+            <video
+              src="media/bg-video.mp4"
+              autoplay
+              loop
+              muted
+            ></video>
+          </div>
+
+        </div>
+        <div class="container-grid">
+          
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script>
+      // smooth scroll
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap.timeline({
+        defaults: { ease: "power1.out", duration: 1 },
+      });
+
+      const lenis = new Lenis();
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>
