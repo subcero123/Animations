@@ -115,7 +115,7 @@
 
       gsap.registerPlugin(ScrollTrigger);
       let tl = gsap.timeline({
-        defaults: { ease: "power1.out", duration: 0.3 },
+        defaults: { ease: "power1.out", duration: 0.5 },
       });
 
       // Obtener works-1 y agregar evento de hover
@@ -128,11 +128,12 @@
         .to(".container-video"  , { display: "none", opacity: 0 }, "<")
         // Efecto de flash a image-container
         .to(".image-container", { filter: "brightness(1)", duration: 0.6 }, "<")
-        .from(".image-container-1", { xPercent: -100, duration: 0.5 }, "<")
-        .from(".image-container-2", { xPercent: 100, duration: 0.5 }, "<")
-        .from(".image-container-3", { yPercent: 100, duration: 0.5 }, "<")
+        .from(".image-container-1", { xPercent: -100 }, "<")
+        .from(".image-container-2", { xPercent: 100 }, "<")
+        .from(".image-container-3", { yPercent: 100 }, "<")
         .to(".image", { scale: "1", duration: 0.6 }, "<")
       });
+
       // Mouse leave
       works1.addEventListener("mouseleave", () => {
         clearTl();
