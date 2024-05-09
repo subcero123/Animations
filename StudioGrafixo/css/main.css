@@ -1,15 +1,21 @@
 body {
   background-color: black;
   color: #777674;
-  overflow-y: hidden;
-  padding: 1.5rem;
+  overflow: hidden;
 }
 
-.container-principal {
+.background-obscuro {
+  position: absolute;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  filter: brightness(20%);
 }
-.container-principal .overlay-menu {
+
+.overlay-menu {
+  padding: 1.5rem;
   font-size: 0.82rem;
   font-family: "Onest", sans-serif;
   z-index: 3;
@@ -22,85 +28,86 @@ body {
   -moz-column-gap: 5rem;
        column-gap: 5rem;
 }
-.container-principal .overlay-menu .big-text {
+.overlay-menu .big-text {
   width: 70%;
 }
-.container-principal .overlay-menu .big-text p {
+.overlay-menu .big-text p {
   margin: 0px;
 }
-.container-principal .overlay-menu .small-text {
+.overlay-menu .small-text {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: start !important;
 }
-.container-principal .overlay-menu .small-text--links {
+.overlay-menu .small-text--links {
   flex-direction: row !important;
   grid-column: 2/4;
 }
-.container-principal .overlay-menu .small-text--links a {
+.overlay-menu .small-text--links a {
   color: #777674;
   text-decoration: underline;
   width: -moz-fit-content;
   width: fit-content;
   margin-right: 1rem;
 }
-.container-principal .overlay-menu .small-text--links a:hover {
+.overlay-menu .small-text--links a:hover {
   color: #f4d88c;
   text-decoration: none;
   cursor: pointer;
 }
-.container-principal .overlay-menu .link {
+.overlay-menu .link {
   margin-top: -5rem;
 }
-.container-principal .overlay-menu .link a {
+.overlay-menu .link a {
   color: #777674;
   text-decoration: underline;
 }
-.container-principal .overlay-menu .link a:hover {
+.overlay-menu .link a:hover {
   color: #f4d88c;
   text-decoration: none;
 }
-.container-principal .overlay-menu .recent-works {
+.overlay-menu .recent-works {
   display: flex;
   flex-direction: column;
 }
-.container-principal .overlay-menu .recent-works .first {
+.overlay-menu .recent-works .first {
   margin-bottom: 1rem;
 }
-.container-principal .overlay-menu .recent-works .works {
+.overlay-menu .recent-works .works {
   color: white;
   font-size: 1.2rem;
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 0.5rem;
 }
-.container-principal .overlay-menu .recent-works .works:hover {
+.overlay-menu .recent-works .works:hover {
   color: #eeae30;
   cursor: pointer;
 }
-.container-principal .overlay-menu .bottom {
+.overlay-menu .bottom {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   margin-bottom: 4.5rem;
 }
-.container-principal .overlay-menu .large-row {
+.overlay-menu .large-row {
   grid-column: 1/5;
 }
-.container-principal .overlay-menu .link-medium {
+.overlay-menu .link-medium {
   display: flex;
   align-items: end;
 }
-.container-principal .overlay-menu .link-medium p {
+.overlay-menu .link-medium p {
   width: 80%;
   margin: 0px;
 }
-.container-principal .container-video {
+
+.container-video {
   height: 100%;
   position: absolute;
 }
-.container-principal .container-video .titulo {
+.container-video .titulo {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -113,63 +120,83 @@ body {
   text-align: center;
   font-family: "Onest", sans-serif;
 }
-.container-principal .container-video .titulo .secundario {
+.container-video .titulo .secundario {
   margin-left: 10rem;
 }
-.container-principal .container-video video {
+.container-video video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.container-principal .container-animations {
+
+.container-animations {
   position: absolute;
   top: 10%;
-  left: 15%;
-  width: 83%;
+  left: 20%;
+  width: 75%;
   height: 78%;
   z-index: 2;
   display: none;
-  opacity: 0;
+  opacity: 1;
+  background: transparent;
 }
-.container-principal .container-animations .layout {
+.container-animations .layout {
   width: 100%;
   height: 100%;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  background-color: black;
   overflow: hidden;
 }
-.container-principal .container-animations .layout .image {
+.container-animations .layout .image {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 0%;
   width: 100%;
   height: 100%;
 }
-.container-principal .container-animations .layout-1 .image-container {
+.container-animations .layout-1 .texto {
+  position: absolute;
+  color: white;
+  font-size: 5rem;
+  font-family: "Onest", sans-serif;
+  z-index: 2;
+  top: 35%;
+  left: 15%;
+  display: flex;
+  flex-direction: column;
+  scale: 0.8;
+  opacity: 0;
+}
+.container-animations .layout-1 .image-container {
   overflow: hidden;
 }
-.container-principal .container-animations .layout-1 .image-container-1 {
+.container-animations .layout-1 .image-container-1 {
   grid-area: 1/1/5/5;
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
 }
-.container-principal .container-animations .layout-1 .image-container-2 {
+.container-animations .layout-1 .image-container-2 {
   grid-area: 5/9/9/11;
+  -webkit-clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+          clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
 }
-.container-principal .container-animations .layout-1 .image-container-3 {
+.container-animations .layout-1 .image-container-3 {
   grid-area: 7/2/11/4;
+  -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
 }
-.container-principal .container-animations .layout-1 .image-container .image {
-  scale: 1.5;
+.container-animations .layout-1 .image-container .image {
+  scale: 1.2;
 }
-.container-principal .container-animations .layout-1 .image-container .image-1 {
+.container-animations .layout-1 .image-container .image-1 {
   background-image: url("../media/1.jpg");
 }
-.container-principal .container-animations .layout-1 .image-container .image-2 {
+.container-animations .layout-1 .image-container .image-2 {
   background-image: url("../media/2.jpg");
 }
-.container-principal .container-animations .layout-1 .image-container .image-3 {
+.container-animations .layout-1 .image-container .image-3 {
   background-image: url("../media/3.jpg");
 }
 
