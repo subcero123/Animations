@@ -47,11 +47,11 @@
           </div>
           <div class="recent-works large-row">
             <span class="first">RECENT WORKS</span>
-            <span class="works">HEREX AETHER</span>
-            <span class="works">COSMIC SILENCE</span>
-            <span class="works">MYSTIC TRAILS</span>
-            <span class="works">METAPHOR</span>
-            <span class="works">PRISMATICA</span>
+            <span class="works works-1">HEREX AETHER</span>
+            <span class="works works-2">COSMIC SILENCE</span>
+            <span class="works works-3">MYSTIC TRAILS</span>
+            <span class="works works-4">METAPHOR</span>
+            <span class="works works-5">PRISMATICA</span>
           </div>
           <div class="medium-text bottom">
             <span>
@@ -84,21 +84,15 @@
         <div class="container-animations">
           <div class="layout layout-1">
             <div class="image-container image-container-1">
-              <div class="image image-1">
-              </div>
+              <div class="image image-1"></div>
             </div>
             <div class="image-container image-container-2">
-              <div class="image image-2">
-              </div>
+              <div class="image image-2"></div>
             </div>
             <div class="image-container image-container-3">
-              <div class="image image-3">
-              </div>
+              <div class="image image-3"></div>
             </div>
-
-
           </div>
-
         </div>
       </div>
     </section>
@@ -120,10 +114,37 @@
       // smooth scroll
 
       gsap.registerPlugin(ScrollTrigger);
-
-      const tl = gsap.timeline({
-        defaults: { ease: "power1.out", duration: 1 },
+      let tl = gsap.timeline({
+        defaults: { ease: "power1.out", duration: 0.3 },
       });
+
+      // Obtener works-1 y agregar evento de hover
+      // Mejor operar con width y height en lugar de x y y
+      const works1 = document.querySelector(".works-1");
+      works1.addEventListener("mouseenter", () => {
+        tl.set([".image-container-1", ".image-container-2"], { xPercent: 0, filter: "brightness(2)" })
+        .set([".image-container-3"], { yPercent: 0, filter: "brightness(1)" })
+        .to(".container-animations", { display: "block", opacity: 1 })
+        .to(".container-video"  , { display: "none", opacity: 0 }, "<")
+        // Efecto de flash a image-container
+        .to(".image-container", { filter: "brightness(1)", duration: 0.6 }, "<")
+        .from(".image-container-1", { xPercent: -100, duration: 0.5 }, "<")
+        .from(".image-container-2", { xPercent: 100, duration: 0.5 }, "<")
+        .from(".image-container-3", { yPercent: 100, duration: 0.5 }, "<")
+        .to(".image", { scale: "1", duration: 0.6 }, "<")
+      });
+      // Mouse leave
+      works1.addEventListener("mouseleave", () => {
+        clearTl();
+      });
+
+      // Función para limpiar timeline
+      function clearTl() {
+        tl.reverse();
+        tl = gsap.timeline({
+          defaults: { ease: "power1.out", duration: 0.3 },
+        });
+      }
 
       const lenis = new Lenis();
 

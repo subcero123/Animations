@@ -129,6 +129,8 @@ body {
   width: 83%;
   height: 78%;
   z-index: 2;
+  display: none;
+  opacity: 0;
 }
 .container-principal .container-animations .layout {
   width: 100%;
@@ -136,6 +138,8 @@ body {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
+  background-color: black;
+  overflow: hidden;
 }
 .container-principal .container-animations .layout .image {
   background-size: cover;
@@ -155,6 +159,9 @@ body {
 }
 .container-principal .container-animations .layout-1 .image-container-3 {
   grid-area: 7/2/11/4;
+}
+.container-principal .container-animations .layout-1 .image-container .image {
+  scale: 1.5;
 }
 .container-principal .container-animations .layout-1 .image-container .image-1 {
   background-image: url("../media/1.jpg");

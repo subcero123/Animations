@@ -158,6 +158,8 @@ body {
     width: 83%;
     height: 78%;
     z-index: 2;
+    display: none;
+    opacity: 0;
 
     .layout {
       width: 100%;
@@ -166,6 +168,8 @@ body {
       // 10 x 10
       grid-template-columns: repeat(10, 1fr);
       grid-template-rows: repeat(10, 1fr);
+      background-color: black;
+      overflow: hidden;
 
       .image{
         background-size: cover;
@@ -193,6 +197,7 @@ body {
           }
 
           .image {
+            scale: 1.5;
 
             &-1 {
               background-image: url("../media/1.jpg");
