@@ -137,20 +137,33 @@ body {
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
 }
-.container-principal .container-animations .layout-1 .image-container {
-  grid-area: 1/1/5/5;
-  overflow: hidden;
-}
-.container-principal .container-animations .layout-1 .image-container .image {
-  background-size: contain;
+.container-principal .container-animations .layout .image {
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-}
-.container-principal .container-animations .layout-1 .image-container .image-1 {
+  background-position: 50% 0%;
   width: 100%;
   height: 100%;
-  scale: 1.2;
+}
+.container-principal .container-animations .layout-1 .image-container {
+  overflow: hidden;
+}
+.container-principal .container-animations .layout-1 .image-container-1 {
+  grid-area: 1/1/5/5;
+}
+.container-principal .container-animations .layout-1 .image-container-2 {
+  grid-area: 5/9/9/11;
+}
+.container-principal .container-animations .layout-1 .image-container-3 {
+  grid-area: 7/2/11/4;
+}
+.container-principal .container-animations .layout-1 .image-container .image-1 {
   background-image: url("../media/1.jpg");
+}
+.container-principal .container-animations .layout-1 .image-container .image-2 {
+  background-image: url("../media/2.jpg");
+}
+.container-principal .container-animations .layout-1 .image-container .image-3 {
+  background-image: url("../media/3.jpg");
 }
 
 .hover {
