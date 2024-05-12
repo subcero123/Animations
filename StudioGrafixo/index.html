@@ -184,7 +184,6 @@
         if (animando) return;
         animando = true;
 
-
         // Cambiar el background de .background-obscruo por beige1.jpg
         document.getElementsByClassName(
           "background-obscuro"
@@ -194,7 +193,7 @@
           [".image-container-1", ".image-container-2", ".image-container-3"],
           { filter: "brightness(2)" }
         )
-        .set(".layout-1", { display: "grid" })
+          .set(".layout-1", { display: "grid" })
 
           .to(".container-animations", { display: "block" })
           .to(".container-video", { display: "none", opacity: 0 }, "<")
@@ -232,7 +231,7 @@
           [".image-container-4", ".image-container-5", ".image-container-6"],
           { filter: "brightness(2)" }
         )
-        .set(".layout-2", { display: "grid" })
+          .set(".layout-2", { display: "grid" })
           .to(".container-animations", { display: "block" })
           .to(".container-video", { display: "none", opacity: 0 }, "<")
           .to(
@@ -267,7 +266,7 @@
           [".image-container-7", ".image-container-8", ".image-container-9"],
           { filter: "brightness(2)" }
         )
-        .set(".layout-3", { display: "grid" })
+          .set(".layout-3", { display: "grid" })
           .to(".container-animations", { display: "block" })
           .to(".container-video", { display: "none", opacity: 0 }, "<")
           .to(
@@ -302,7 +301,7 @@
           [".image-container-10", ".image-container-11", ".image-container-12"],
           { filter: "brightness(2)" }
         )
-        .set(".layout-4", { display: "grid" })
+          .set(".layout-4", { display: "grid" })
           .to(".container-animations", { display: "block" })
           .to(".container-video", { display: "none", opacity: 0 }, "<")
           .to(
@@ -338,7 +337,7 @@
           [".image-container-13", ".image-container-14", ".image-container-15"],
           { filter: "brightness(2)" }
         )
-        .set(".layout-5", { display: "grid" })
+          .set(".layout-5", { display: "grid" })
           .to(".container-animations", { display: "block" })
           .to(".container-video", { display: "none", opacity: 0 }, "<")
           .to(
@@ -359,7 +358,6 @@
         clearTl();
       });
 
-
       // Función para limpiar timeline
       function clearTl() {
         tl.reverse();
@@ -374,9 +372,9 @@
         setTimeout(() => {
           animando = false;
           tl = gsap.timeline({
-          defaults: { ease: "power1.out", duration: 0.4 },
-        });
-          }, tl.totalTime() * 1000);
+            defaults: { ease: "power1.out", duration: 0.4 },
+          });
+        }, tl.totalTime() * 1000);
       }
 
       const lenis = new Lenis();
