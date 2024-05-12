@@ -148,15 +148,9 @@ body {
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   overflow: hidden;
+  display: none;
 }
-.container-animations .layout .image {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 0%;
-  width: 100%;
-  height: 100%;
-}
-.container-animations .layout-1 .texto {
+.container-animations .layout .texto {
   position: absolute;
   color: white;
   font-size: 5rem;
@@ -169,7 +163,60 @@ body {
   scale: 0.8;
   opacity: 0;
 }
-.container-animations .layout-1 .image-container {
+.container-animations .layout .image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  width: 100%;
+  height: 100%;
+  scale: 1.2;
+}
+.container-animations .layout .image-1 {
+  background-image: url("../media/1.jpg");
+}
+.container-animations .layout .image-2 {
+  background-image: url("../media/2.jpg");
+}
+.container-animations .layout .image-3 {
+  background-image: url("../media/3.jpg");
+}
+.container-animations .layout .image-4 {
+  background-image: url("../media/4.jpg");
+}
+.container-animations .layout .image-5 {
+  background-image: url("../media/5.jpg");
+}
+.container-animations .layout .image-6 {
+  background-image: url("../media/6.jpg");
+}
+.container-animations .layout .image-7 {
+  background-image: url("../media/7.jpg");
+}
+.container-animations .layout .image-8 {
+  background-image: url("../media/8.jpg");
+}
+.container-animations .layout .image-9 {
+  background-image: url("../media/9.jpg");
+}
+.container-animations .layout .image-10 {
+  background-image: url("../media/10.jpg");
+}
+.container-animations .layout .image-11 {
+  background-image: url("../media/11.jpg");
+}
+.container-animations .layout .image-12 {
+  background-image: url("../media/12.jpg");
+}
+.container-animations .layout .image-13 {
+  background-image: url("../media/13.jpg");
+}
+.container-animations .layout .image-14 {
+  background-image: url("../media/14.jpg");
+}
+.container-animations .layout .image-15 {
+  background-image: url("../media/15.jpg");
+}
+.container-animations .layout .image-container {
   overflow: hidden;
 }
 .container-animations .layout-1 .image-container-1 {
@@ -182,22 +229,128 @@ body {
   -webkit-clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
           clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
 }
+@media (min-width: 1024px) {
+  .container-animations .layout-1 .image-container-2 {
+    grid-area: 5/7/10/10;
+  }
+}
 .container-animations .layout-1 .image-container-3 {
   grid-area: 7/2/11/4;
   -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
           clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
 }
-.container-animations .layout-1 .image-container .image {
-  scale: 1.2;
+.container-animations .layout-2 .image-container-4 {
+  grid-area: 3/6/8/10;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 }
-.container-animations .layout-1 .image-container .image-1 {
-  background-image: url("../media/1.jpg");
+.container-animations .layout-2 .image-container-5 {
+  grid-area: 6/5/9/8;
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
 }
-.container-animations .layout-1 .image-container .image-2 {
-  background-image: url("../media/2.jpg");
+@media (min-width: 1024px) {
+  .container-animations .layout-2 .image-container-5 {
+    grid-area: 6/5/11/8;
+  }
 }
-.container-animations .layout-1 .image-container .image-3 {
-  background-image: url("../media/3.jpg");
+.container-animations .layout-2 .image-container-6 {
+  grid-area: 1/2/3/4;
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+@media (min-width: 1024px) {
+  .container-animations .layout-2 .image-container-6 {
+    grid-area: 2/1/6/4;
+  }
+}
+.container-animations .layout-3 .image-container-7 {
+  grid-area: 7/2/10/5;
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+@media (min-width: 1024px) {
+  .container-animations .layout-3 .image-container-7 {
+    grid-area: 7/2/11/4;
+  }
+}
+.container-animations .layout-3 .image-container-8 {
+  grid-area: 2/8/8/11;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+@media (min-width: 1024px) {
+  .container-animations .layout-3 .image-container-8 {
+    grid-area: 2/8/9/10;
+  }
+}
+.container-animations .layout-3 .image-container-9 {
+  grid-area: 2/3/5/6;
+  -webkit-clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+          clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+}
+@media (min-width: 1024px) {
+  .container-animations .layout-3 .image-container-9 {
+    grid-area: 2/3/5/5;
+  }
+}
+.container-animations .layout-4 .image-container-10 {
+  grid-area: 3/7/8/11;
+  -webkit-clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+          clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+}
+@media (min-width: 1024px) {
+  .container-animations .layout-4 .image-container-10 {
+    grid-area: 6/7/10/9;
+  }
+}
+.container-animations .layout-4 .image-container-11 {
+  grid-area: 6/5/11/9;
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+@media (min-width: 1024px) {
+  .container-animations .layout-4 .image-container-11 {
+    grid-area: 4/1/10/3;
+  }
+}
+.container-animations .layout-4 .image-container-12 {
+  grid-area: 1/2/4/4;
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+@media (min-width: 1024px) {
+  .container-animations .layout-4 .image-container-12 {
+    grid-area: 1/5/5/9;
+  }
+}
+.container-animations .layout-5 .image-container-13 {
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+@media (min-width: 1024px) {
+  .container-animations .layout-5 .image-container-13 {
+    grid-area: 2/7/8/10;
+  }
+}
+.container-animations .layout-5 .image-container-14 {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+@media (min-width: 1024px) {
+  .container-animations .layout-5 .image-container-14 {
+    grid-area: 1/4/5/6;
+  }
+}
+.container-animations .layout-5 .image-container-15 {
+  grid-area: 7/2/11/4;
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+@media (min-width: 1024px) {
+  .container-animations .layout-5 .image-container-15 {
+    grid-area: 6/2/10/4;
+  }
 }
 
 .hover {

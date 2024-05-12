@@ -97,6 +97,64 @@
           <div class="image image-3"></div>
         </div>
       </div>
+      <div class="layout layout-2">
+        <div class="texto">
+          <span>Cosmic</span>
+          <span>Silence</span>
+        </div>
+        <div class="image-container image-container-4">
+          <div class="image image-4"></div>
+        </div>
+        <div class="image-container image-container-5">
+          <div class="image image-5"></div>
+        </div>
+        <div class="image-container image-container-6">
+          <div class="image image-6"></div>
+        </div>
+      </div>
+      <div class="layout layout-3">
+        <div class="texto">
+          <span>Mystic</span>
+          <span>Trails</span>
+        </div>
+        <div class="image-container image-container-7">
+          <div class="image image-7"></div>
+        </div>
+        <div class="image-container image-container-8">
+          <div class="image image-8"></div>
+        </div>
+        <div class="image-container image-container-9">
+          <div class="image image-9"></div>
+        </div>
+      </div>
+      <div class="layout layout-4">
+        <div class="texto">
+          <span>Metaphor</span>
+        </div>
+        <div class="image-container image-container-10">
+          <div class="image image-10"></div>
+        </div>
+        <div class="image-container image-container-11">
+          <div class="image image-11"></div>
+        </div>
+        <div class="image-container image-container-12">
+          <div class="image image-12"></div>
+        </div>
+      </div>
+      <div class="layout layout-5">
+        <div class="texto">
+          <span>Prismatica</span>
+        </div>
+        <div class="image-container image-container-13">
+          <div class="image image-13"></div>
+        </div>
+        <div class="image-container image-container-14">
+          <div class="image image-14"></div>
+        </div>
+        <div class="image-container image-container-15">
+          <div class="image image-15"></div>
+        </div>
+      </div>
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
@@ -113,6 +171,7 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
     <script>
       // smooth scroll
+      let animando = false;
 
       gsap.registerPlugin(ScrollTrigger);
       let tl = gsap.timeline({
@@ -120,9 +179,12 @@
       });
 
       // Obtener works-1 y agregar evento de hover
-      // Mejor operar con width y height en lugar de x y y
       const works1 = document.querySelector(".works-1");
       works1.addEventListener("mouseenter", () => {
+        if (animando) return;
+        animando = true;
+
+
         // Cambiar el background de .background-obscruo por beige1.jpg
         document.getElementsByClassName(
           "background-obscuro"
@@ -132,6 +194,8 @@
           [".image-container-1", ".image-container-2", ".image-container-3"],
           { filter: "brightness(2)" }
         )
+        .set(".layout-1", { display: "grid" })
+
           .to(".container-animations", { display: "block" })
           .to(".container-video", { display: "none", opacity: 0 }, "<")
           // Efecto de flash a image-container
@@ -154,6 +218,148 @@
         clearTl();
       });
 
+      // Works 2
+      const works2 = document.querySelector(".works-2");
+      works2.addEventListener("mouseenter", () => {
+        if (animando) return;
+        animando = true;
+
+        document.getElementsByClassName(
+          "background-obscuro"
+        )[0].style.backgroundImage = "url('media/beige2.jpg')";
+
+        tl.set(
+          [".image-container-4", ".image-container-5", ".image-container-6"],
+          { filter: "brightness(2)" }
+        )
+        .set(".layout-2", { display: "grid" })
+          .to(".container-animations", { display: "block" })
+          .to(".container-video", { display: "none", opacity: 0 }, "<")
+          .to(
+            ".image-container",
+            { filter: "brightness(1)", duration: 0.5 },
+            "<"
+          )
+          .to(
+            ".image-container",
+            { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
+            "<"
+          )
+          .to(".image", { scale: "1", duration: 0.6 }, "<")
+          .to(".texto", { opacity: 1, scale: 1 }, "<");
+      });
+
+      works2.addEventListener("mouseleave", () => {
+        clearTl();
+      });
+
+      // Works 3
+      const works3 = document.querySelector(".works-3");
+      works3.addEventListener("mouseenter", () => {
+        if (animando) return;
+        animando = true;
+
+        document.getElementsByClassName(
+          "background-obscuro"
+        )[0].style.backgroundImage = "url('media/red1.jpg')";
+
+        tl.set(
+          [".image-container-7", ".image-container-8", ".image-container-9"],
+          { filter: "brightness(2)" }
+        )
+        .set(".layout-3", { display: "grid" })
+          .to(".container-animations", { display: "block" })
+          .to(".container-video", { display: "none", opacity: 0 }, "<")
+          .to(
+            ".image-container",
+            { filter: "brightness(1)", duration: 0.5 },
+            "<"
+          )
+          .to(
+            ".image-container",
+            { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
+            "<"
+          )
+          .to(".image", { scale: "1", duration: 0.6 }, "<")
+          .to(".texto", { opacity: 1, scale: 1 }, "<");
+      });
+
+      works3.addEventListener("mouseleave", () => {
+        clearTl();
+      });
+
+      // Works 4
+      const works4 = document.querySelector(".works-4");
+      works4.addEventListener("mouseenter", () => {
+        if (animando) return;
+        animando = true;
+
+        document.getElementsByClassName(
+          "background-obscuro"
+        )[0].style.backgroundImage = "url('media/red2.jpg')";
+
+        tl.set(
+          [".image-container-10", ".image-container-11", ".image-container-12"],
+          { filter: "brightness(2)" }
+        )
+        .set(".layout-4", { display: "grid" })
+          .to(".container-animations", { display: "block" })
+          .to(".container-video", { display: "none", opacity: 0 }, "<")
+          .to(
+            ".image-container",
+            { filter: "brightness(1)", duration: 0.5 },
+            "<"
+          )
+          .to(
+            ".image-container",
+            { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
+            "<"
+          )
+          .to(".image", { scale: "1", duration: 0.6 }, "<")
+          .to(".texto", { opacity: 1, scale: 1 }, "<");
+      });
+
+      works4.addEventListener("mouseleave", () => {
+        clearTl();
+      });
+
+      // Works 5
+
+      const works5 = document.querySelector(".works-5");
+      works5.addEventListener("mouseenter", () => {
+        if (animando) return;
+        animando = true;
+
+        document.getElementsByClassName(
+          "background-obscuro"
+        )[0].style.backgroundImage = "url('media/pink.jpg')";
+
+        tl.set(
+          [".image-container-13", ".image-container-14", ".image-container-15"],
+          { filter: "brightness(2)" }
+        )
+        .set(".layout-5", { display: "grid" })
+          .to(".container-animations", { display: "block" })
+          .to(".container-video", { display: "none", opacity: 0 }, "<")
+          .to(
+            ".image-container",
+            { filter: "brightness(1)", duration: 0.5 },
+            "<"
+          )
+          .to(
+            ".image-container",
+            { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
+            "<"
+          )
+          .to(".image", { scale: "1", duration: 0.6 }, "<")
+          .to(".texto", { opacity: 1, scale: 1 }, "<");
+      });
+
+      works5.addEventListener("mouseleave", () => {
+        clearTl();
+      });
+
+
       // Función para limpiar timeline
       function clearTl() {
         tl.reverse();
@@ -163,9 +369,14 @@
         document.getElementsByClassName(
           "background-obscuro"
         )[0].style.backgroundImage = "none";
-        tl = gsap.timeline({
+
+        // Esperar tl.totalTime
+        setTimeout(() => {
+          animando = false;
+          tl = gsap.timeline({
           defaults: { ease: "power1.out", duration: 0.4 },
         });
+          }, tl.totalTime() * 1000);
       }
 
       const lenis = new Lenis();
