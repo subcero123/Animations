@@ -1,0 +1,152 @@
+@font-face {
+  font-family: "Swanse"; /* Nombre de la fuente */
+  src: url("fonts/SWANSE__.TTF") format("truetype"); /* Ruta al archivo de la fuente */
+}
+body {
+  background-color: #E1E1E1;
+}
+
+.front-page {
+  overflow: hidden;
+  width: 100%;
+}
+.front-page .navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+.front-page .navbar .contenido-derecha {
+  width: 15%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.front-page .navbar .contenido-derecha p {
+  margin: 0px 0px;
+}
+.front-page .navbar .contenido-izquierda {
+  width: 85%;
+  display: flex;
+}
+.front-page .navbar .contenido-izquierda span {
+  margin-right: 3rem;
+}
+.front-page .navbar .contenido-izquierda .active {
+  font-weight: bold;
+}
+.front-page .primer-contenido {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 75vh;
+  justify-content: center;
+  position: relative;
+}
+.front-page .primer-contenido .titulo-principal {
+  font-size: 9rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.front-page .primer-contenido .subtitulo {
+  font-size: 0.8rem;
+}
+@media (min-width: 1024px) {
+  .front-page .primer-contenido .subtitulo {
+    align-self: flex-end;
+  }
+}
+.front-page .primer-contenido .imagen-abs {
+  position: absolute;
+}
+.front-page .primer-contenido .anillo-principal {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../images/7.png");
+  top: 0%;
+  right: -20%;
+  z-index: -1;
+}
+@media (min-width: 1024px) {
+  .front-page .primer-contenido .anillo-principal {
+    top: 10%;
+    width: 100%;
+    height: 100%;
+    right: -60%;
+  }
+}
+.front-page .segundo-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
+  height: 100vh;
+}
+.front-page .segundo-contenido .titulo-secundario {
+  width: 90%;
+  font-size: 3rem;
+}
+@media (min-width: 1024px) {
+  .front-page .segundo-contenido .titulo-secundario {
+    width: 50%;
+    font-size: 3.2rem;
+  }
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section .figura {
+  width: 40%;
+  height: 40%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+}
+.section .figura-1 {
+  background-image: url("../images/8.png");
+}
+.section .figura-2 {
+  background-image: url("../images/9.png");
+}
+.section .figura-3 {
+  background-image: url("../images/10.png");
+}
+.section .figura-4 {
+  background-image: url("../images/11.png");
+}
+.section .figura-5 {
+  background-image: url("../images/12.png");
+}
+.section .titulo {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.section .subtitulo {
+  width: 50%;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.bg-1 {
+  background-color: #9D9D9D;
+}
+
+.bg-2 {
+  background-color: #C7C7C7;
+}
+
+.bold {
+  font-weight: bold;
+}/*# sourceMappingURL=main.css.map */

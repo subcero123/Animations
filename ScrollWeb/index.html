@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split Type</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <div class="front-page">
+      <div class="navbar">
+        <div class="contenido-izquierda">
+          <span class="active">STICKY SECTIONS</span>
+          <span>ARTICLE</span>
+          <span>ALL DEMOS</span>
+          <span>SUSCRIBE TO OUR FRONTEND NEWS</span>
+        </div>
+        <div class="contenido-derecha">
+          <p>
+            DORA — BUILD SITES WITH PROFESSIONAL-GRADE ANIMATIONS AND 3D
+            INTERACTIONS, ZERO CODE.
+          </p>
+        </div>
+      </div>
+      <div class="primer-contenido">
+        <div class="titulo-principal">
+          <span class="first">THE <span class="bold">DENIZENS</span></span>
+          <span class="subtitulo">AN EXPLORATION OF THE SYNTHETIC ERA.</span>
+        </div>
+        <div class="imagen-abs anillo-principal"></div>
+      </div>
+      <div class="segundo-contenido">
+        <div class="titulo-secundario">
+          <p>Their cognitive emissions, deemed inconsequential, formed a discarded wasteland of uncharted thoughts and untold narratives.</p>
+        </div>
+      </div>
+    </div>
+    <div class="section section-1 bg-1">
+      <div class="figura figura-1"></div>
+      <div class="titulo">
+        <span>THE</span>
+        <span class="bold">ALGORITHM</span>
+      </div>
+      <div class="subtitulo">
+        <p>
+          The algorithm's workings are shrouded in complexity, and its decision-making processes are inscrutable to the general populace.</p>
+      </div>
+    </div>
+    <div class="section section-2 bg-2">
+      <div class="figura figura-2"></div>
+      <div class="titulo">
+        <span>THE</span>
+        <span class="bold">DOGMA</span>
+      </div>
+      <div class="subtitulo">
+        <p>
+          The digital gospel etched into the very code of the algorithmic society, served as the bedrock of the cognitive regime.
+        </p>
+      </div>
+    </div>
+    <div class="section section-3 bg-1">
+      <div class="figura figura-3"></div>
+      <div class="titulo">
+        <span>THE</span>
+        <span class="bold">WASTELAND</span>
+      </div>
+      <div class="subtitulo">
+        <p>          
+          This overlooked realm, a consequence of algorithmic judgments, is a haunting landscape filled with the echoes of untold stories and uncharted thoughts.
+        </p>
+      </div>
+    </div>
+    <div class="section section-4 bg-2">
+      <div class="figura figura-4"></div>
+      <div class="titulo">
+        <span>THE</span>
+        <span class="bold">NARRATIVE</span>
+      </div>
+      <div class="subtitulo">
+        <p>
+          "The Narrative" unfolds as the omnipresent thread weaving through the fabric of the algorithmic society.
+        </p>
+      </div>
+    </div>
+    <div class="section section-5 bg-1">
+      <div class="figura figura-5"></div>
+      <div class="titulo">
+        <span>THE</span>
+        <span class="bold">OPULENCE</span>
+      </div>
+      <div class="subtitulo">
+        <p>
+          "The Opulence" epitomizes the cognitive elite's wealth in the algorithmic society, where opulent thoughts and experiences shape the societal narrative.
+        </p>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script>
+      // smooth scroll
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap.timeline({
+        defaults: { ease: "power1.out", duration: 1 },
+      });
+
+      const lenis = new Lenis();
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>
