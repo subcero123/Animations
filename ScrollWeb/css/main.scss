@@ -138,6 +138,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  filter: brightness(0.8);
+  border-radius: 15%;
+  opacity: 1;
+
   
   .figura{
     width: 40%;
@@ -177,6 +181,10 @@ body {
     font-size: 1.2rem;
     text-align: center;
   }
+}
+
+.ultima-seccion{
+  height: 100%;
 }
 
 .bg-1{

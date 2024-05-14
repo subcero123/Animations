@@ -101,6 +101,25 @@
         </p>
       </div>
     </div>
+<!-- 
+    <div class="ultima-seccion">
+      <div class="titulo-secundario">
+        <p>Lost in perpetual dependency, inhabitants of the Synthetic Era found solace in cryptic simulations, where pain ebbed and cognitive loads momentarily lightened.</p>
+      </div>
+      <div class="imagen-abs">
+      </div>
+      <div class="footer">
+        <div class="seccion-1">
+          <span>IMAGES BY ANNAS MUSLIMIN ON VECTEEZY</span>
+        </div>
+        <div class="seccion-2">
+          <span>
+            MADE BY @CODROPS
+          </span>
+          <span>HIRE US</span>
+        </div>
+      </div>
+    </div> -->
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
@@ -120,9 +139,50 @@
 
       gsap.registerPlugin(ScrollTrigger);
 
-      const tl = gsap.timeline({
-        defaults: { ease: "power1.out", duration: 1 },
+      // Obtener todas las secciones con gsap
+      const sections = gsap.utils.toArray(".section");
+
+      // Animar cada seccion con scrollTrigger
+      sections.forEach((section, index) => {
+
+
+        gsap.from(section, {
+          borderRadius: "0%",
+          y: "-20%",
+          // Filtro negro
+          filter: "brightness(1)",
+          
+
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            markers: true,
+            toggleActions: "play none none none",
+            pin:true
+          },
+
+        });
+
+        gsap.from(section, {
+          y: "-20%",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            markers: true,
+            toggleActions: "play none none reverse",
+            pin:true
+          },
+
+        });
+
+        
+        
       });
+
 
       const lenis = new Lenis();
 
