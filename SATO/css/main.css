@@ -1,5 +1,5 @@
 body {
-  background-color: #EDEDED;
+  background-color: #ededed;
   overflow-x: hidden;
 }
 
@@ -138,6 +138,61 @@ body {
   width: 100%;
 }
 
+.barra-diagonal {
+  width: 90%;
+  margin: auto;
+  height: 25px;
+  background-color: black;
+  -webkit-clip-path: polygon(2% 0, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(2% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+.barra-diagonal--1 {
+  margin-bottom: 5rem;
+}
+.barra-diagonal--2 {
+  -webkit-clip-path: polygon(0 0, 98% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 98% 0, 100% 100%, 0% 100%);
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.contenedor-actividades {
+  width: 90%;
+  margin: auto;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contenedor-actividades .titulo {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.contenedor-actividades .imagen--actividades {
+  margin-top: 2rem;
+}
+.contenedor-actividades .imagen--actividades--1 {
+  background-image: url("../images/experiencia-1.png");
+}
+.contenedor-actividades .imagen--actividades--2 {
+  background-image: url("../images/experiencia-2.png");
+}
+.contenedor-actividades .imagen--actividades--3 {
+  background-image: url("../images/experiencia-3.png");
+}
+.contenedor-actividades .descripcion {
+  width: 50%;
+  font-size: 1rem;
+  color: #828282;
+  text-align: left;
+}
+@media (min-width: 1024px) {
+  .contenedor-actividades .descripcion {
+    font-size: 1.3rem;
+  }
+}
+
 .inferior {
   padding-top: 5rem;
 }
@@ -169,6 +224,7 @@ body {
 .titulo {
   font-size: 1.8rem;
   text-align: center;
+  font-weight: bold;
 }
 
 .subtitulo {
