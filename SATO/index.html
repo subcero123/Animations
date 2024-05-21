@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split Type</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+
+    <section>
+      <div class="navbar">
+        <div class="container">
+          <div class="logo"></div>
+          <div class="menu">
+            <a href="">INICIO</a>
+            <a href="">RESERVA</a>
+            <a href="">CONTACTO</a>
+            <a href="">FAQ</a>
+          </div>
+          <div class="white-container"></div>
+        </div>
+      </div>
+      <div class="contenedor-primera-seccion">
+        <div class="titulo">
+          <h1>TRADICION Y ELEGANCIA: BIENVENIDO A SATO</h1>
+        </div>
+        <div class="contenedor-hero">
+          <div class="imagen-principal"></div>
+          <div class="contenedor-llamada-accion">
+            <h2>RESERVA TU MESA</h2>
+            <p>Disfruta de la mejor comida japonesa en la ciudad</p>
+            <div class="boton boton--principal">
+              <a href="">RESERVAR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script>
+     
+
+      const lenis = new Lenis();
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>

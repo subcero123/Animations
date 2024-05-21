@@ -134,13 +134,15 @@ body {
 
 .section{
   height: 100vh;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   filter: brightness(0.8);
   border-radius: 15%;
   opacity: 1;
+  margin: 2rem;
+
 
   
   .figura{
@@ -184,7 +186,8 @@ body {
 }
 
 .ultima-seccion{
-  height: 100%;
+  
+  background-color: #E1E1E1;
 }
 
 .bg-1{

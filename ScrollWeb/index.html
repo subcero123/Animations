@@ -101,7 +101,7 @@
         </p>
       </div>
     </div>
-<!-- 
+
     <div class="ultima-seccion">
       <div class="titulo-secundario">
         <p>Lost in perpetual dependency, inhabitants of the Synthetic Era found solace in cryptic simulations, where pain ebbed and cognitive loads momentarily lightened.</p>
@@ -119,7 +119,7 @@
           <span>HIRE US</span>
         </div>
       </div>
-    </div> -->
+    </div>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
@@ -148,9 +148,11 @@
 
         gsap.from(section, {
           borderRadius: "0%",
-          y: "-20%",
+          y: "-10%",
           // Filtro negro
           filter: "brightness(1)",
+          display: "flex",
+          margin: 0,
           
 
           scrollTrigger: {
@@ -166,7 +168,6 @@
         });
 
         gsap.from(section, {
-          y: "-20%",
           scrollTrigger: {
             trigger: section,
             start: "top top",
