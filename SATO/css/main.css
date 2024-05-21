@@ -1,5 +1,6 @@
 body {
   background-color: #EDEDED;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -11,7 +12,7 @@ body {
   position: relative;
 }
 .navbar .container {
-  width: 95%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -48,4 +49,143 @@ body {
   z-index: 2;
   -webkit-clip-path: polygon(11% 0, 100% 0%, 100% 100%, 0% 100%);
           clip-path: polygon(11% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.contenedor-primera-seccion {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  height: 80vh;
+}
+.contenedor-primera-seccion .titulo {
+  width: 90%;
+  font-size: 4rem;
+  text-align: center;
+  margin: auto;
+}
+.contenedor-primera-seccion .titulo h1 {
+  font-weight: normal;
+}
+.contenedor-primera-seccion .contenedor-hero {
+  width: 90%;
+  margin: 0px auto;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.contenedor-primera-seccion .contenedor-hero .imagen-principal {
+  width: 65%;
+  height: 60vh;
+  background-image: url("../images/hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+.contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion p {
+  font-size: 1.3rem;
+  text-align: left;
+  margin-top: 2rem;
+  color: #828282;
+}
+.contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion .boton--principal {
+  margin-top: 4rem;
+}
+
+.contenedor-platillos {
+  width: 90%;
+  margin: auto;
+}
+.contenedor-platillos .contenedor-platillo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+.contenedor-platillos .contenedor-platillo .imagen--platillo {
+  margin-top: 2rem;
+}
+.contenedor-platillos .contenedor-platillo .imagen--platillo--1 {
+  background-image: url("../images/platillo-1.png");
+}
+.contenedor-platillos .contenedor-platillo .imagen--platillo--2 {
+  background-image: url("../images/platillo-2.png");
+}
+.contenedor-platillos .contenedor-platillo .descripcion {
+  font-size: 1rem;
+  margin-top: 2rem;
+  color: #828282;
+}
+@media (min-width: 1024px) {
+  .contenedor-platillos .contenedor-platillo .descripcion {
+    font-size: 1.3rem;
+  }
+}
+.contenedor-platillos .contenedor-platillo .botones {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.inferior {
+  padding-top: 5rem;
+}
+
+.boton {
+  width: 180px;
+  padding: 0.8rem;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.boton--secundario {
+  background-color: white;
+  color: black;
+}
+.boton--secundario a {
+  color: black !important;
+  text-decoration: none;
+}
+.boton a {
+  color: white;
+  text-decoration: none;
+}
+
+.titulo {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.subtitulo {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.imagen {
+  width: 85%;
+  height: 20vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+@media (min-width: 1024px) {
+  .imagen {
+    height: 40vh;
+  }
 }/*# sourceMappingURL=main.css.map */

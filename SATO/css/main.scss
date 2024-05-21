@@ -1,5 +1,19 @@
+// Mixin desktop y tablet
+@mixin desktop{
+  @media (min-width: 1024px){
+    @content;
+  }
+}
+
+@mixin tablet{
+  @media (min-width: 768px){
+    @content;
+  }
+}
+
 body{
   background-color: #EDEDED;
+  overflow-x: hidden;
 }
 
 .navbar{
@@ -11,7 +25,7 @@ body{
   align-items: center;
   position: relative;
   .container{
-    width: 95%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -56,4 +70,166 @@ body{
       
     }
   }
+}
+
+.contenedor-primera-seccion{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  height: 80vh;
+
+  .titulo{
+    width: 90%;
+    font-size: 4rem;
+    text-align: center;
+    margin: auto;
+
+    h1{
+      font-weight: normal;
+    }
+    
+  }
+
+  .contenedor-hero{
+    
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .imagen-principal{
+      width: 65%;
+      height: 60vh;
+      background-image: url('../images/hero.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 20px;
+    }
+
+    .contenedor-llamada-accion{
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      p{
+        font-size: 1.3rem;
+        text-align: left;
+        margin-top: 2rem;
+        color: #828282;
+      }
+
+      .boton--principal{
+        margin-top: 4rem;
+      }
+
+    }
+  }
+
+}
+
+.contenedor-platillos{
+  width: 90%;
+  margin: auto;
+
+  .contenedor-platillo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+
+    .imagen--platillo{
+      margin-top: 2rem;
+
+      &--1{
+        background-image: url('../images/platillo-1.png');
+      }
+
+      &--2{
+        background-image: url('../images/platillo-2.png');
+      }
+    }
+
+    .descripcion{
+      font-size: 1rem;
+      margin-top: 2rem;
+      color: #828282;
+
+      // Desktop
+      @include desktop{
+        font-size: 1.3rem;
+      }
+    }
+
+    .botones{
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+  }
+}
+
+.inferior{
+  padding-top: 5rem;
+}
+
+
+.boton{
+  width: 180px;
+  padding: .8rem;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+
+  &--secundario{
+    background-color: white;
+    color: black;
+
+    a{
+      color: black !important;
+      text-decoration: none;
+    }
+  }
+
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.titulo{
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.subtitulo{
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.imagen{
+  width: 85%;
+  height: 20vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+
+  // desktop
+  @include desktop{
+    height: 40vh;
+  }
+
+
 }
