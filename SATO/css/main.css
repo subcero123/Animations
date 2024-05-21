@@ -80,7 +80,7 @@ body {
   width: 65%;
   height: 60vh;
   background-image: url("../images/hero.png");
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 20px;
@@ -260,8 +260,13 @@ body {
   justify-content: space-between;
   padding: 2rem;
 }
-.footer .contenedor-1 .titulo {
-  text-align: start;
+.footer .contenedor-1 .logo {
+  width: 200px;
+  height: 100px;
+  background-image: url("../images/logo.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .footer .contenedor-1 .redes {
   display: flex;
@@ -334,14 +339,14 @@ body {
 .imagen {
   width: 85%;
   height: 20vh;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 20px;
 }
 @media (min-width: 1024px) {
   .imagen {
-    height: 40vh;
+    height: 50vh;
   }
 }
 
