@@ -88,7 +88,7 @@ body {
     }
 
     .white-container {
-      width: 60%;
+      width: 45%;
       height: 60%;
       background-color: white;
       position: absolute;
@@ -97,6 +97,11 @@ body {
       z-index: 2;
       // Diagonal en la izquierda
       clip-path: polygon(11% 0, 100% 0%, 100% 100%, 0% 100%);
+
+      //tablet
+      @include tablet {
+        width: 60%;
+      }
     }
   }
 }
@@ -152,6 +157,17 @@ body {
       border-radius: 20px;
       display: none;
 
+      &--mobile{
+        display: block;
+        width: 100%;
+        height: 25vh;
+
+        //tablet
+        @include tablet {
+          display: none !important;
+        }
+      }
+
       // tablet
       @include tablet {
         display: block;
@@ -178,7 +194,12 @@ body {
       }
 
       .boton--principal {
-        margin-top: 4rem;
+        margin-top: 2rem;
+
+        // tablet
+        @include tablet {
+          margin-top: 4rem;
+        }
       }
     }
   }
@@ -307,7 +328,7 @@ body {
 
     .card {
       width: 90%;
-      height: 35vh;
+      height: fit-content;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -368,20 +389,23 @@ body {
   flex-direction: row;
 
   .contenedor-1 {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
+    align-items: center;
 
     // tablet
     @include tablet {
+      width: 50%;
       padding: 2rem;
+      align-items: start;
     }
 
     .logo {
-      width: 100px;
-      height: 50px;
+      width: 50%;
+      height: 50%;
       background-image: url("../images/logo.png");
       background-size: contain;
       background-position: center;
@@ -411,7 +435,7 @@ body {
 
   .contenedor-2 {
     width: 50%;
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: space-evenly;
     padding: 1rem;
@@ -419,6 +443,7 @@ body {
     // tablet
     @include tablet {
       padding: 2rem;
+      display: flex;
     }
 
     .division {
@@ -441,7 +466,7 @@ body {
 }
 
 .inferior {
-  padding-top: 5rem;
+  padding-top: 7rem;
 }
 
 .boton {
@@ -514,6 +539,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 20px;
+
+  //tablet
+  @include tablet {
+    height: 40vh;
+  }
 
   // desktop
   @include desktop {

@@ -70,7 +70,7 @@ body {
   cursor: pointer;
 }
 .navbar .container .white-container {
-  width: 60%;
+  width: 45%;
   height: 60%;
   background-color: white;
   position: absolute;
@@ -79,6 +79,11 @@ body {
   z-index: 2;
   -webkit-clip-path: polygon(11% 0, 100% 0%, 100% 100%, 0% 100%);
           clip-path: polygon(11% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+@media (min-width: 768px) {
+  .navbar .container .white-container {
+    width: 60%;
+  }
 }
 
 .contenedor-primera-seccion {
@@ -130,6 +135,16 @@ body {
   border-radius: 20px;
   display: none;
 }
+.contenedor-primera-seccion .contenedor-hero .imagen-principal--mobile {
+  display: block;
+  width: 100%;
+  height: 25vh;
+}
+@media (min-width: 768px) {
+  .contenedor-primera-seccion .contenedor-hero .imagen-principal--mobile {
+    display: none !important;
+  }
+}
 @media (min-width: 768px) {
   .contenedor-primera-seccion .contenedor-hero .imagen-principal {
     display: block;
@@ -154,7 +169,12 @@ body {
   color: #828282;
 }
 .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion .boton--principal {
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion .boton--principal {
+    margin-top: 4rem;
+  }
 }
 
 .contenedor-platillos {
@@ -268,7 +288,8 @@ body {
 }
 .contenedor-criticos .contenedor-cards .card {
   width: 90%;
-  height: 35vh;
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -322,20 +343,23 @@ body {
   flex-direction: row;
 }
 .footer .contenedor-1 {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .footer .contenedor-1 {
+    width: 50%;
     padding: 2rem;
+    align-items: start;
   }
 }
 .footer .contenedor-1 .logo {
-  width: 100px;
-  height: 50px;
+  width: 50%;
+  height: 50%;
   background-image: url("../images/logo.png");
   background-size: contain;
   background-position: center;
@@ -361,7 +385,7 @@ body {
 }
 .footer .contenedor-2 {
   width: 50%;
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-evenly;
   padding: 1rem;
@@ -369,6 +393,7 @@ body {
 @media (min-width: 768px) {
   .footer .contenedor-2 {
     padding: 2rem;
+    display: flex;
   }
 }
 .footer .contenedor-2 .division {
@@ -388,7 +413,7 @@ body {
 }
 
 .inferior {
-  padding-top: 5rem;
+  padding-top: 7rem;
 }
 
 .boton {
@@ -458,6 +483,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 20px;
+}
+@media (min-width: 768px) {
+  .imagen {
+    height: 40vh;
+  }
 }
 @media (min-width: 1024px) {
   .imagen {
