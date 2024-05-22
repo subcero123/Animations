@@ -1,12 +1,12 @@
-// Mixin desktop y tablet
-@mixin desktop {
-  @media (min-width: 1024px) {
+// mixin desktop y tablet
+@mixin tablet {
+  @media (min-width: 768px) {
     @content;
   }
 }
 
-@mixin tablet {
-  @media (min-width: 768px) {
+@mixin desktop {
+  @media (min-width: 1024px) {
     @content;
   }
 }
@@ -16,7 +16,6 @@ body {
   overflow-x: hidden;
   width: 100%;
   margin: 0;
-
 }
 
 .navbar {
@@ -35,26 +34,56 @@ body {
     margin: auto;
 
     .logo {
-      width: 200px;
-      height: 100px;
+      width: 100px;
+      height: 50px;
       background-image: url("../images/logo.png");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+
+      //tablet
+      @include tablet {
+        width: 200px;
+        height: 100px;
+      }
     }
 
     .menu {
-      display: flex;
+      display: none;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       width: 50%;
       z-index: 3;
 
+      //tablet
+      @include tablet {
+        display: flex;
+      }
+
       // Quitar estilos de los link
       a {
         text-decoration: none;
         color: black;
+      }
+    }
+
+    .menu-burger{
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40%;
+
+      //tablet
+      @include tablet {
+        display: none;
+      }
+
+      svg{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
       }
     }
 
@@ -80,9 +109,19 @@ body {
 
   .titulo {
     width: 90%;
-    font-size: 4rem;
+    font-size: 1.5rem;
     text-align: center;
-    margin: auto;
+    margin: 2rem auto;
+
+    // Desktop
+    @include desktop {
+      font-size: 3.5rem !important;
+    }
+
+    // tablet
+    @include tablet {
+      font-size: 3rem;
+    }
 
     h1 {
       font-weight: normal;
@@ -94,8 +133,14 @@ body {
     margin: 0px auto;
     margin-top: 4rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    // tablet
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     .imagen-principal {
       width: 65%;
@@ -105,14 +150,25 @@ body {
       background-position: center;
       background-repeat: no-repeat;
       border-radius: 20px;
+      display: none;
+
+      // tablet
+      @include tablet {
+        display: block;
+      }
     }
 
     .contenedor-llamada-accion {
-      width: 30%;
+      width: 90%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
+      // tablet
+      @include tablet {
+        width: 30%;
+      }
 
       p {
         font-size: 1.3rem;
@@ -172,18 +228,18 @@ body {
   }
 }
 
-.barra-diagonal{
+.barra-diagonal {
   width: 90%;
   margin: auto;
   height: 25px;
   background-color: black;
   clip-path: polygon(2% 0, 100% 0%, 100% 100%, 0% 100%);
 
-  &--1{
+  &--1 {
     margin-bottom: 5rem;
   }
 
-  &--2{
+  &--2 {
     clip-path: polygon(0 0, 98% 0, 100% 100%, 0% 100%);
     margin-top: 5rem;
   }
@@ -202,8 +258,8 @@ body {
     text-align: center;
     margin-bottom: 2rem;
   }
-  
-  .imagen--actividades{
+
+  .imagen--actividades {
     margin-top: 2rem;
   }
 
@@ -232,20 +288,25 @@ body {
   }
 }
 
-.contenedor-criticos{
+.contenedor-criticos {
   width: 90%;
   margin: auto;
   display: flex;
   flex-direction: column;
 
-  .contenedor-cards{
+  .contenedor-cards {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     margin-top: 4rem;
 
-    .card{
-      width: 25%;
+    // tablet
+    @include tablet {
+      flex-direction: row;
+    }
+
+    .card {
+      width: 90%;
       height: 35vh;
       display: flex;
       flex-direction: column;
@@ -253,9 +314,17 @@ body {
       padding: 1rem;
       border-radius: 20px;
       background-color: white;
-      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+      margin: auto;
+      margin-bottom: 2rem;
 
-      .imagen{
+      // tablet
+      @include tablet {
+        width: 25%;
+        margin: 0px;
+      }
+
+      .imagen {
         align-self: center;
         width: 100px;
         height: 100px;
@@ -264,34 +333,33 @@ body {
         background-repeat: no-repeat;
         border-radius: 50%;
 
-        &--critico{
+        &--critico {
           background-image: url("../images/Avatar.png");
         }
       }
 
-      .nombre{
+      .nombre {
         font-size: 1.3rem;
         margin-top: 1rem;
       }
 
-      .quote{
+      .quote {
         font-size: 1.5rem;
         margin-top: 1rem;
         font-weight: bold;
         align-self: center;
       }
 
-      .descripcion{
+      .descripcion {
         font-size: 1rem;
         margin-top: 1rem;
         color: #828282;
       }
-    
     }
   }
 }
 
-.footer{
+.footer {
   margin-top: 5rem;
   width: 100%;
   height: 20vh;
@@ -299,60 +367,76 @@ body {
   display: flex;
   flex-direction: row;
 
-  .contenedor-1{
+  .contenedor-1 {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1rem;
 
-    
+    // tablet
+    @include tablet {
+      padding: 2rem;
+    }
+
     .logo {
-      width: 200px;
-      height: 100px;
+      width: 100px;
+      height: 50px;
       background-image: url("../images/logo.png");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+
+      //tablet
+      @include tablet {
+        width: 200px;
+        height: 100px;
+      }
     }
 
-    .redes{
+    .redes {
       display: flex;
       flex-direction: row;
       justify-content: start;
       margin-top: 2rem;
 
-      svg{
+      svg {
         margin-right: 1rem;
         width: 20px;
         height: 20px;
         color: #828282;
-      
       }
     }
   }
 
-  .contenedor-2{
+  .contenedor-2 {
     width: 50%;
-    padding: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding: 1rem;
 
-    .division{
+    // tablet
+    @include tablet {
+      padding: 2rem;
+    }
+
+    .division {
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      font-size: 0.5rem;
 
-      a{
-        color: black;
-        
+      // tablet
+      @include tablet {
+        font-size: 1rem;
       }
 
-
+      a {
+        color: black;
+      }
     }
-
   }
 }
 
@@ -361,7 +445,7 @@ body {
 }
 
 .boton {
-  width: 180px;
+  width: 80px;
   padding: 0.8rem;
   background-color: black;
   color: white;
@@ -370,6 +454,11 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 10px;
+
+  //tablet
+  @include tablet {
+    width: 180px;
+  }
 
   &--secundario {
     background-color: white;
@@ -388,14 +477,34 @@ body {
 }
 
 .titulo {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   text-align: center;
   font-weight: bold;
+
+  //tablet
+  @include tablet {
+    font-size: 1.7rem;
+  }
+
+  // desktop
+  @include desktop {
+    font-size: 1.8rem;
+  }
 }
 
 .subtitulo {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-align: center;
+
+  //tablet
+  @include tablet {
+    font-size: 1.3rem;
+  }
+
+  // desktop
+  @include desktop {
+    font-size: 1.3rem;
+  }
 }
 
 .imagen {
@@ -413,7 +522,6 @@ body {
 }
 
 a {
-  
   text-decoration: none;
 
   &:hover {
