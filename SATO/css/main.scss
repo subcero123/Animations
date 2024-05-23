@@ -195,8 +195,15 @@ body {
 
       // tablet
       @include tablet {
+        width: 25%;
+      }
+
+      // desktop
+      @include desktop {
         width: 20%;
       }
+
+
 
       h2{
         font-size: 1.2rem;
@@ -215,8 +222,13 @@ body {
 
         // tabllet
         @include tablet {
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           text-align: left;
+        }
+
+        // desktop
+        @include desktop {
+          font-size: 1.3rem;
         }
       }
 

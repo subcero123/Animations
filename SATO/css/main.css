@@ -170,6 +170,11 @@ body {
 }
 @media (min-width: 768px) {
   .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion {
+    width: 25%;
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion {
     width: 20%;
   }
 }
@@ -189,8 +194,13 @@ body {
 }
 @media (min-width: 768px) {
   .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     text-align: left;
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion p {
+    font-size: 1.3rem;
   }
 }
 .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion .boton--principal {
