@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@100..900&display=swap");
 body {
   background-color: #ededed;
   overflow-x: hidden;
@@ -89,23 +91,26 @@ body {
 .contenedor-primera-seccion {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
-  height: 80vh;
+  justify-content: center;
+  height: 81vh;
 }
 .contenedor-primera-seccion .titulo {
   width: 90%;
   font-size: 1.5rem;
   text-align: center;
   margin: 2rem auto;
+  font-family: "Forum", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 @media (min-width: 1024px) {
   .contenedor-primera-seccion .titulo {
-    font-size: 3.5rem !important;
+    font-size: 2.8rem !important;
   }
 }
 @media (min-width: 768px) {
   .contenedor-primera-seccion .titulo {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 }
 .contenedor-primera-seccion .titulo h1 {
@@ -114,7 +119,7 @@ body {
 .contenedor-primera-seccion .contenedor-hero {
   width: 90%;
   margin: 0px auto;
-  margin-top: 4rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -126,8 +131,8 @@ body {
   }
 }
 .contenedor-primera-seccion .contenedor-hero .imagen-principal {
-  width: 65%;
-  height: 60vh;
+  aspect-ratio: 16/10;
+  flex: 1;
   background-image: url("../images/hero.png");
   background-size: contain;
   background-position: center;
@@ -139,6 +144,7 @@ body {
   display: block;
   width: 100%;
   height: 25vh;
+  margin-top: 1rem;
 }
 @media (min-width: 768px) {
   .contenedor-primera-seccion .contenedor-hero .imagen-principal--mobile {
@@ -148,25 +154,44 @@ body {
 @media (min-width: 768px) {
   .contenedor-primera-seccion .contenedor-hero .imagen-principal {
     display: block;
+    margin-right: 2rem;
   }
 }
 .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
 }
 @media (min-width: 768px) {
   .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion {
-    width: 30%;
+    width: 20%;
+  }
+}
+.contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion h2 {
+  font-size: 1.2rem;
+}
+@media (min-width: 768px) {
+  .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion h2 {
+    font-size: 1.5rem;
   }
 }
 .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion p {
-  font-size: 1.3rem;
-  text-align: left;
+  font-size: 1.1rem;
+  text-align: center;
   margin-top: 2rem;
   color: #828282;
+}
+@media (min-width: 768px) {
+  .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion p {
+    font-size: 1.3rem;
+    text-align: left;
+  }
 }
 .contenedor-primera-seccion .contenedor-hero .contenedor-llamada-accion .boton--principal {
   margin-top: 2rem;
@@ -198,9 +223,12 @@ body {
   background-image: url("../images/platillo-2.png");
 }
 .contenedor-platillos .contenedor-platillo .descripcion {
+  width: 80%;
+  text-align: center;
   font-size: 1rem;
   margin-top: 2rem;
   color: #828282;
+  font-family: "inter", sans-serif;
 }
 @media (min-width: 1024px) {
   .contenedor-platillos .contenedor-platillo .descripcion {
@@ -211,7 +239,7 @@ body {
   margin-top: 2rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
 }
 
@@ -294,16 +322,25 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 1rem;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: white;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   margin: auto;
   margin-bottom: 2rem;
 }
+.contenedor-criticos .contenedor-cards .card--2 {
+  margin-top: 0% !important;
+}
+@media (min-width: 768px) {
+  .contenedor-criticos .contenedor-cards .card--2 {
+    margin-top: 8% !important;
+  }
+}
 @media (min-width: 768px) {
   .contenedor-criticos .contenedor-cards .card {
     width: 25%;
     margin: 0px;
+    height: 400px;
   }
 }
 .contenedor-criticos .contenedor-cards .card .imagen {
@@ -413,11 +450,11 @@ body {
 }
 
 .inferior {
-  padding-top: 7rem;
+  padding-top: 5rem;
 }
 
 .boton {
-  width: 80px;
+  width: 100px;
   padding: 0.8rem;
   background-color: black;
   color: white;
@@ -426,21 +463,32 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .boton {
-    width: 180px;
+    width: 192px;
   }
 }
 .boton--secundario {
   background-color: white;
   color: black;
+  margin-left: 2rem;
+}
+@media (min-width: 768px) {
+  .boton--secundario {
+    margin-left: 4rem;
+  }
 }
 .boton--secundario a {
+  font-family: "inter", sans-serif;
   color: black !important;
   text-decoration: none;
 }
 .boton a {
+  font-family: "inter", sans-serif;
   color: white;
   text-decoration: none;
 }
@@ -449,6 +497,7 @@ body {
   font-size: 1.4rem;
   text-align: center;
   font-weight: bold;
+  font-family: "Inter", sans-serif;
 }
 @media (min-width: 768px) {
   .titulo {
@@ -464,6 +513,7 @@ body {
 .subtitulo {
   font-size: 1.2rem;
   text-align: center;
+  font-family: "forum", serif;
 }
 @media (min-width: 768px) {
   .subtitulo {
@@ -477,8 +527,9 @@ body {
 }
 
 .imagen {
-  width: 85%;
-  height: 20vh;
+  aspect-ratio: 16/7;
+  width: 100%;
+  height: auto;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -486,12 +537,16 @@ body {
 }
 @media (min-width: 768px) {
   .imagen {
-    height: 40vh;
+    aspect-ratio: 16/7;
+    width: 100%;
+    height: auto;
   }
 }
 @media (min-width: 1024px) {
   .imagen {
-    height: 50vh;
+    aspect-ratio: 16/6;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -501,4 +556,9 @@ a {
 a:hover {
   text-decoration: none;
   font-weight: bold;
+}
+
+section {
+  max-width: 1440px;
+  margin: auto;
 }/*# sourceMappingURL=main.css.map */
