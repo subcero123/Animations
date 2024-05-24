@@ -124,6 +124,20 @@ body {
     font-weight: 400;
     font-style: normal;
 
+    .imagen-principal{
+      margin-top: 2rem;
+      aspect-ratio: 16/14;
+      background-image: url("../images/hero.png");
+      background-size: cover;
+      background-position: 100% 0%;
+      border-radius: 10px;
+
+      //tablet
+      @include tablet {
+        display: none;
+      }
+    }
+
     // Desktop
     @include desktop {
       font-size: 2.8rem !important;
@@ -142,7 +156,6 @@ body {
   .contenedor-hero {
     width: 90%;
     margin: 0px auto;
-    margin-top: 3rem;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -206,7 +219,8 @@ body {
 
 
       h2{
-        font-size: 1.2rem;
+        font-size: 1rem;
+        color: #888;
 
         //tablet
         @include tablet {
@@ -215,9 +229,9 @@ body {
       }
 
       p {
-        font-size: 1.1rem;
+        font-size: .9rem;
         text-align: center;
-        margin-top: 2rem;
+        margin-top: 1rem;
         color: #828282;
 
         // tabllet
@@ -233,7 +247,8 @@ body {
       }
 
       .boton--principal {
-        margin-top: 2rem;
+        margin-top: 1rem;
+        width: 90%;
 
         // tablet
         @include tablet {
@@ -255,6 +270,10 @@ body {
     align-items: center;
     margin-top: 4rem;
 
+    .subtitulo{
+      font-size: 1.3rem;
+    }
+
     .imagen--platillo {
       margin-top: 2rem;
 
@@ -270,13 +289,13 @@ body {
     .descripcion {
       width: 80%;
       text-align: center;
-      font-size: 1rem;
+      font-size: 0.9rem;
       margin-top: 2rem;
       color: #828282;
       font-family: "inter", sans-serif;
 
       // Desktop
-      @include desktop {
+      @include tablet() {
         font-size: 1.3rem;
       }
     }
@@ -294,9 +313,14 @@ body {
 .barra-diagonal {
   width: 90%;
   margin: auto;
-  height: 25px;
+  height: 10px;
   background-color: black;
   clip-path: polygon(2% 0, 100% 0%, 100% 100%, 0% 100%);
+
+  // tablet
+  @include tablet {
+    height: 25px;
+  }
 
   &--1 {
     margin-bottom: 5rem;
@@ -323,7 +347,12 @@ body {
   }
 
   .imagen--actividades {
-    margin-top: 2rem;
+    margin-top: 1rem;
+
+    // tablet
+    @include tablet {
+      margin-top: 2rem;
+    }
   }
 
   .imagen--actividades--1 {
@@ -526,7 +555,9 @@ body {
   padding: 0.8rem;
   background-color: black;
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  font-weight: bold;
   text-align: center;
   border: none;
   cursor: pointer;
@@ -538,12 +569,15 @@ body {
   //tablet
   @include tablet {
     width: 192px;
+    font-size: 1rem;
+
   }
 
   &--secundario {
     background-color: white;
     color: black;
     margin-left: 2rem;
+    border: 1px solid #b9b9b9;
 
     //tablet
     @include tablet {
@@ -601,16 +635,20 @@ body {
   aspect-ratio: 16/7;
   width: 100%;
   height: auto;
-  background-size: contain;
+  background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 20px;
+  border: 1px solid #b9b9b9;
 
   //tablet
   @include tablet {
     aspect-ratio: 16/7;
+    background-size: contain;
+
     width: 100%;
     height: auto;
+    border: none !important;
   }
 
   // desktop
