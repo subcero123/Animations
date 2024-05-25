@@ -52,7 +52,7 @@
     </section>
     <section class="inferior">
       <div class="contenedor-platillos">
-        <div class="titulo">
+        <div class="titulo titulo-scroll">
           <span>PLATILLOS ESPECIALES</span>
         </div>
         <div class="contenedor-platillo">
@@ -92,7 +92,7 @@
     </section>
     <section class="inferior">
       <div class="barra-diagonal barra-diagonal--1"></div>
-      <div class="titulo"><span>EXPERIENCIAS UNICAS</span></div>
+      <div class="titulo titulo-scroll"><span>EXPERIENCIAS UNICAS</span></div>
 
       <div class="contenedor-actividades">
         <div class="subtitulo"><span>FIESTAS</span></div>
@@ -111,7 +111,7 @@
     </section>
     <section class="inferior">
       <div class="contenedor-criticos">
-        <div class="titulo"><span>NUESTROS CRITICOS</span></div>
+        <div class="titulo titulo-scroll"><span>NUESTROS CRITICOS</span></div>
 
         <div class="contenedor-cards">
           <div class="card card--1">
@@ -192,6 +192,97 @@
       }
 
       requestAnimationFrame(raf);
+
+      // Animacion en scroll
+      gsap.registerPlugin(ScrollTrigger);
+      
+      let contenedoresPlatillos = gsap.utils.toArray('.contenedor-platillo');
+      let contenedorActividades = gsap.utils.toArray('.contenedor-actividades');
+
+      // iterar sobre platillos
+      contenedoresPlatillos.forEach((platillo) => {
+        gsap.from(platillo, {
+          scrollTrigger: {
+            trigger: platillo,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+          y: 100,
+          opacity: 0,
+        });
+      });
+
+      // iterar sobre actividades
+      contenedorActividades.forEach((actividad) => {
+        gsap.from(actividad, {
+          scrollTrigger: {
+            trigger: actividad,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+          y: 100,
+          opacity: 0,
+        });
+      });
+
+
+      // barra diagonal--1
+      gsap.from('.barra-diagonal--1', {
+        scrollTrigger: {
+          trigger: '.barra-diagonal--1',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        },
+        x: 200,
+        opacity: 0,
+      });
+
+      // barra diagonal--2
+      gsap.from('.barra-diagonal--2', {
+        scrollTrigger: {
+          trigger: '.barra-diagonal--2',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+          
+        },
+        x: -200,
+        opacity: 0,
+      });
+
+      // cards
+      let cards = gsap.utils.toArray('.card');
+      gsap.from(cards, {
+        scrollTrigger: {
+          trigger: cards,
+          start: 'top 80%',
+          end: 'bottom 80%',
+          toggleActions: 'play none none reverse',
+          scrub: 3,
+        },
+        scale: 1.2,
+        y: 100,
+        opacity: 0,
+        stagger: 0.2,
+      });
+
+      // iterar sobre los elementos con la clase titulo
+      let titulos = gsap.utils.toArray('.titulo-scroll');
+      titulos.forEach((titulo) => {
+        gsap.from(titulo, {
+          scrollTrigger: {
+            trigger: titulo,
+            start: 'top 80%',
+            end: 'bottom 80%',
+            toggleActions: 'play none none reverse',
+          },
+          y: 100,
+          opacity: 0,
+        });
+      });
+
+
+
+
     </script>
   </body>
 </html>

@@ -7,6 +7,24 @@ body {
   margin: 0;
 }
 
+.animacion-inicio {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: #EDEDED;
+}
+.animacion-inicio .logo {
+  width: 50%;
+  height: 10%;
+  background-image: url("../images/logo.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+  top: 50%;
+}
+
 .navbar {
   width: 100%;
   display: flex;
@@ -605,4 +623,5 @@ a:hover {
 section {
   max-width: 1440px;
   margin: auto;
+  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */
