@@ -15,6 +15,49 @@
 
   <body>
 
+
+    <section class="animacion-entrada animacion-entrada--1">
+      <div class="background-logo">
+        <div class="logo"></div>
+      </div>
+    </section>
+
+    <div class="container-link-animaciones">
+      <div class="texto">
+        <span>ANIMATIONS: </span>
+      </div>
+      <div class="numero numero--selected">
+        <a href="">1</a>
+      </div>
+      <div class="numero">
+        <a href="">2</a>
+      </div>
+      <div class="numero">
+        <a href="">3</a>
+      </div>
+      <div class="numero">
+        <a href="">4</a>
+      </div>
+      <div class="numero">
+        <a href="">5</a>
+      </div>
+      <div class="numero">
+        <a href="">6</a>
+      </div>
+      <div class="numero">
+        <a href="">7</a>
+      </div>
+      <div class="numero">
+        <a href="">8</a>
+      </div>
+      <div class="numero">
+        <a href="">9</a>
+      </div>
+
+    </div>
+
+
+
     <section>
       <div class="navbar">
         <div class="container">
@@ -165,6 +208,8 @@
         </div>
       </div>
     </div>
+
+    
   
 
     <script
@@ -193,8 +238,33 @@
 
       requestAnimationFrame(raf);
 
+
+      // timeline
+      const tl = gsap.timeline();
+
+      tl.from('.logo', {
+        yPercent: -50,
+        // rebotar
+        ease: 'elastic.out(1, 0.5)',
+        duration: 1.5,
+
+      })
+      .to('.animacion-entrada', {
+        x: '-100%',
+        duration: 1.1,
+      }, '-=0.2')
+      .from(['.contenedor-primera-seccion', '.navbar'], {
+        y: 100,
+        opacity: 0,
+        duration: 1.5,
+      }, '<')
+
+
       // Animacion en scroll
       gsap.registerPlugin(ScrollTrigger);
+
+      // Esperar a que termine la animacion de entrada
+      
       
       let contenedoresPlatillos = gsap.utils.toArray('.contenedor-platillo');
       let contenedorActividades = gsap.utils.toArray('.contenedor-actividades');
@@ -279,7 +349,6 @@
           opacity: 0,
         });
       });
-
 
 
 
