@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@100..900&display=swap");
+.wrapper-sticky {
+  width: 100%;
+  position: absolute;
+  height: 1000%;
+}
+
 .container-link-animaciones {
   position: sticky;
   bottom: 10%;
   width: 30%;
   top: 85%;
-  left: 10%;
+  left: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,6 +24,7 @@
   font-family: "Inter", sans-serif;
 }
 .container-link-animaciones .numero {
+  position: relative;
   border-radius: 50%;
   border: 2px solid black;
   width: 30px;
@@ -27,6 +34,17 @@
   align-items: center;
   text-align: center;
   cursor: pointer;
+}
+.container-link-animaciones .numero a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: gray;
 }
 .container-link-animaciones .numero--selected {
   background-color: black;
@@ -40,10 +58,6 @@
 .container-link-animaciones .numero:hover a {
   color: white;
   font-weight: bold;
-}
-.container-link-animaciones a {
-  text-decoration: none;
-  color: gray;
 }
 
 body {

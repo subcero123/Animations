@@ -2,6 +2,69 @@ body{
   background-color: white;
 }
 
+.container-link-animaciones{
+  position: absolute;
+  width: 30%;
+  top: 85%;
+  left: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+
+  .numero{
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+
+    a {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: gray;
+    }
+
+    &--selected{
+      background-color: black;
+      
+      a{
+        color: white;
+      }
+
+    }
+
+    &:hover{
+      background-color: black;
+      a{
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+
+  // Quitar estilos de los link
+
+
+}
+
 .milk-opening{
   width: 100%;
   height: 100vh;
