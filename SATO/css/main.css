@@ -209,7 +209,7 @@ body {
 .contenedor-primera-seccion .titulo .imagen-principal {
   margin-top: 2rem;
   aspect-ratio: 16/14;
-  background-image: url("../images/hero.webp");
+  background-color: gray;
   background-size: cover;
   background-position: 100% 0%;
   border-radius: 10px;
@@ -248,7 +248,7 @@ body {
 .contenedor-primera-seccion .contenedor-hero .imagen-principal {
   aspect-ratio: 16/10;
   flex: 1;
-  background-image: url("../images/hero.webp");
+  background-color: gray;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

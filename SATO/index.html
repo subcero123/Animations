@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SATO</title>
-    <link rel="preload" href="https://raw.githubusercontent.com/subcero123/Animations/main/SATO/images/logo.png" as="image">
+    <link
+      rel="preload"
+      href="https://raw.githubusercontent.com/subcero123/Animations/main/SATO/images/logo.png"
+      as="image"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,7 +19,6 @@
   </head>
 
   <body data-barba="wrapper">
-
     <div class="wrapper-sticky">
       <div class="container-link-animaciones">
         <div class="texto">
@@ -24,19 +27,19 @@
         <div class="numero numero--selected">
           <a href="/Animations/SATO">1</a>
         </div>
-        <div class="numero  ">
+        <div class="numero">
           <a href="/Animations/Tedy">2</a>
         </div>
-        <div class="numero ">
+        <div class="numero">
           <a href="/Animations/EntranceAnimations">3</a>
         </div>
-        <div class="numero ">
+        <div class="numero">
           <a href="/Animations/StudioGrafixo">4</a>
         </div>
-        <div class="numero ">
+        <div class="numero">
           <a href="/Animations/Tympanus">5</a>
         </div>
-        <div class="numero ">
+        <div class="numero">
           <a href="/Animations/ScrollWeb">6</a>
         </div>
         <div class="numero">
@@ -59,8 +62,6 @@
         <div class="logo"></div>
       </div>
     </section>
-
-
 
     <section data-barba="container">
       <div class="navbar">
@@ -112,10 +113,16 @@
       <div class="contenedor-primera-seccion">
         <div class="titulo">
           <span>TRADICION Y ELEGANCIA: BIENVENIDO A SATO</span>
-          <div class="imagen-principal"></div>
+          <div
+            data-bg="images/hero.webp"
+            class="imagen-principal lazy-bg"
+          ></div>
         </div>
         <div class="contenedor-hero">
-          <div class="imagen-principal"></div>
+          <div
+            data-bg="images/hero.webp"
+            class="imagen-principal lazy-bg"
+          ></div>
           <div class="contenedor-llamada-accion">
             <h2>RESERVA TU MESA</h2>
             <p>
@@ -386,29 +393,39 @@
       // timeline
       const tl = gsap.timeline();
 
-      tl.from(".logo", {
-        xPercent: 50,
-        // rebotar
-        ease: "elastic.out(1, 0.5)",
-        duration: 1.5,
-      })
-        .to(
-          ".animacion-entrada",
-          {
-            x: "-100%",
-            duration: 1.1,
-          },
-          "-=0.2"
-        )
-        .from(
-          [".contenedor-primera-seccion", ".navbar"],
-          {
-            y: 100,
-            opacity: 0,
-            duration: 1.5,
-          },
-          "<"
-        );
+      // Verificacion si existe el cookie animacion
+      if (document.cookie.indexOf("animacion") == -1) {
+        // Si no existe, se crea
+        document.cookie = "animacion=true";
+
+        tl.from(".logo", {
+          xPercent: 50,
+          // rebotar
+          ease: "elastic.out(1, 0.5)",
+          duration: 1.5,
+        })
+          .to(
+            ".animacion-entrada",
+            {
+              x: "-100%",
+              duration: 1.1,
+            },
+            "-=0.2"
+          )
+          .from(
+            [".contenedor-primera-seccion", ".navbar"],
+            {
+              y: 100,
+              opacity: 0,
+              duration: 1.5,
+            },
+            "<"
+          );
+      } else {
+        // Si existe, se elimina
+        console.log("existe");
+        gsap.set(".animacion-entrada", { x: "-100%" });
+      }
 
       // Animacion en scroll
       gsap.registerPlugin(ScrollTrigger);
@@ -495,6 +512,40 @@
           y: 100,
           opacity: 0,
         });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        let lazyBackgrounds = [].slice.call(
+          document.querySelectorAll(".lazy-bg")
+        );
+
+        if ("IntersectionObserver" in window) {
+          let lazyBackgroundObserver = new IntersectionObserver(function (
+            entries,
+            observer
+          ) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                let lazyBackground = entry.target;
+                lazyBackground.style.backgroundImage =
+                  "url(" + lazyBackground.dataset.bg + ")";
+                lazyBackgroundObserver.unobserve(lazyBackground);
+                // quitar backgroundcolor
+                lazyBackground.style.backgroundColor = "transparent";
+              }
+            });
+          });
+
+          lazyBackgrounds.forEach(function (lazyBackground) {
+            lazyBackgroundObserver.observe(lazyBackground);
+          });
+        } else {
+          // Fallback para navegadores que no soportan IntersectionObserver
+          lazyBackgrounds.forEach(function (lazyBackground) {
+            lazyBackground.style.backgroundImage =
+              "url(" + lazyBackground.dataset.bg + ")";
+          });
+        }
       });
     </script>
   </body>
