@@ -14,17 +14,41 @@
   padding: 1rem;
   font-family: "Inter", sans-serif;
 }
+@media (min-width: 768px) {
+  .container-link-animaciones {
+    width: 40%;
+  }
+}
+@media (min-width: 1024px) {
+  .container-link-animaciones {
+    width: 30%;
+  }
+}
+.container-link-animaciones .texto {
+  font-size: 0.7rem;
+}
+@media (min-width: 768px) {
+  .container-link-animaciones .texto {
+    font-size: 1rem;
+  }
+}
 .container-link-animaciones .numero {
   position: relative;
   border-radius: 50%;
   border: 2px solid black;
-  width: 30px;
-  height: 30px;
+  width: 18px;
+  height: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .container-link-animaciones .numero {
+    width: 30px;
+    height: 30px;
+  }
 }
 .container-link-animaciones .numero a {
   width: 100%;

@@ -1,15 +1,26 @@
 @font-face {
-  font-family: 'Swanse'; /* Nombre de la fuente */
-  src: url('fonts/SWANSE__.TTF') format('truetype'); /* Ruta al archivo de la fuente */
+  font-family: "Swanse"; /* Nombre de la fuente */
+  src: url("fonts/SWANSE__.TTF") format("truetype"); /* Ruta al archivo de la fuente */
 }
 
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
 
-$color-secundario: #ED3C24;
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+$color-secundario: #ed3c24;
 body {
   background-color: black;
 }
 
-.container-link-animaciones{
+.container-link-animaciones {
   position: absolute;
   width: 30%;
   top: 85%;
@@ -23,19 +34,45 @@ body {
   background-color: white;
   border-radius: 15px;
   padding: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 
-  .numero{
+  // tablet
+  @include tablet {
+    width: 40%;
+  }
+
+  // desktop
+  @include desktop {
+    width: 30%;
+  }
+
+  .texto {
+    // intervalo de font-size
+    font-size: 0.7rem;
+
+    // tablet
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+
+  .numero {
     position: relative;
     border-radius: 50%;
     border: 2px solid black;
-    width: 30px;
-    height: 30px;
+    width: 18px;
+    height: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     cursor: pointer;
+
+    // tablet
+    @include tablet {
+      width: 30px;
+      height: 30px;
+    }
 
     a {
       width: 100%;
@@ -49,18 +86,17 @@ body {
       color: gray;
     }
 
-    &--selected{
+    &--selected {
       background-color: black;
-      
-      a{
+
+      a {
         color: white;
       }
-
     }
 
-    &:hover{
+    &:hover {
       background-color: black;
-      a{
+      a {
         color: white;
         font-weight: bold;
       }
@@ -68,11 +104,9 @@ body {
   }
 
   // Quitar estilos de los link
-
-
 }
 
-.contenedor-entrada{
+.contenedor-entrada {
   width: 100%;
   height: 100vh;
   background-color: $color-secundario;
@@ -81,75 +115,75 @@ body {
   justify-self: center;
   text-align: center;
 
-  .logo{
+  .logo {
     width: 100%;
 
-    svg{
+    svg {
       width: 120px;
       height: 100px;
     }
   }
 }
 
-.navbar{
+.navbar {
   width: 80%;
   height: 150px;
 
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  color: #D2D2D2;
+  color: #d2d2d2;
 
-  .logo{
+  .logo {
     background-color: $color-secundario;
     width: 100px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    svg{
+    svg {
       width: 70px;
       margin-bottom: 25px;
     }
   }
 
-  .line{
+  .line {
     width: 50px;
   }
 
-  .concepts{
+  .concepts {
     margin-left: -15%;
     display: flex;
     flex-direction: row;
     align-items: center;
 
-    p{
+    p {
       margin-right: 50px;
       margin-left: 50px;
     }
   }
 
-  .menu{
+  .menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 }
 
-.contenedor-texto-principal{
+.contenedor-texto-principal {
   width: 80%;
   height: 100%;
   font-size: 8rem;
-  color: #D2D2D2;
-  font-family: 'Swanse', sans-serif;
+  color: #d2d2d2;
+  font-family: "Swanse", sans-serif;
   margin: auto;
 
-  p{
+  p {
     line-height: 0px;
   }
 }
 
 .flair {
-  background-color: #D2D2D2;
+  background-color: #d2d2d2;
   width: 20px;
   height: 20px;
   border-radius: 50%;
