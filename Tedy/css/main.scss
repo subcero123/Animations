@@ -1,8 +1,20 @@
 $background-alternativo: #fedcea;
+// mixin desktop y tablet
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
 
-.container-link-animaciones{
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+.container-link-animaciones {
   position: absolute;
-  width: 30%;
+  width: 80%;
   top: 85%;
   left: 2%;
   display: flex;
@@ -14,19 +26,45 @@ $background-alternativo: #fedcea;
   background-color: white;
   border-radius: 15px;
   padding: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
+
+  // tablet
+  @include tablet {
+    width: 40%;
+  }
+
+  // desktop
+  @include desktop {
+    width: 30%;
+  }
+
+  .texto {
+    // intervalo de font-size
+    font-size: 0.7rem;
+
+    // tablet
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
 
   .numero{
     position: relative;
     border-radius: 50%;
     border: 2px solid black;
-    width: 30px;
-    height: 30px;
+    width: 18px;
+    height: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     cursor: pointer;
+
+    // tablet
+    @include tablet{
+      width: 30px;
+      height: 30px;
+    }
 
     a {
       width: 100%;
@@ -59,8 +97,6 @@ $background-alternativo: #fedcea;
   }
 
   // Quitar estilos de los link
-
-
 }
 
 section {
@@ -196,32 +232,32 @@ section {
         justify-content: center;
         z-index: 3;
 
-        &--1{
+        &--1 {
           bottom: 18%;
           left: 15%;
         }
 
-        &--2{
+        &--2 {
           bottom: 30%;
           left: 25%;
         }
 
-        &--3{
+        &--3 {
           bottom: 19%;
           left: 50%;
         }
 
-        &--4{
+        &--4 {
           bottom: 25%;
           right: 15%;
         }
 
-        .icon{
+        .icon {
           border-radius: 5px;
-          background-color: #FFF5D9;
+          background-color: #fff5d9;
           margin-right: 5px;
 
-          img{
+          img {
             padding: 5px;
             width: 20px;
           }

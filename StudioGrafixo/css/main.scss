@@ -19,7 +19,7 @@ $color-link-works-current: #eeae30;
 
 .container-link-animaciones{
   position: absolute;
-  width: 30%;
+  width: 80%;
   top: 85%;
   left: 2%;
   display: flex;
@@ -33,17 +33,45 @@ $color-link-works-current: #eeae30;
   padding: 1rem;
   font-family: 'Inter', sans-serif;
 
+
+  // tablet 
+  @include tablet{
+    width: 40%;
+  }
+
+  // desktop
+  @include desktop{
+    width: 30%;
+  }
+
+
+  .texto{
+    // intervalo de font-size
+    font-size: 0.7rem;
+
+    // tablet
+    @include tablet{
+      font-size: 1rem;
+    }
+  }
+
   .numero{
     position: relative;
     border-radius: 50%;
     border: 2px solid black;
-    width: 30px;
-    height: 30px;
+    width: 18px;
+    height: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     cursor: pointer;
+
+    // tablet
+    @include tablet{
+      width: 30px;
+      height: 30px;
+    }
 
     a {
       width: 100%;
@@ -74,7 +102,6 @@ $color-link-works-current: #eeae30;
       }
     }
   }
-
   // Quitar estilos de los link
 
 
